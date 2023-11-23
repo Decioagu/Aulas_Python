@@ -1258,3 +1258,236 @@ print(espadas._fields) # ver valor padrão
 print(espadas._field_defaults) # ver valor padrão
 #-----------------------------------------------------------------------------------------------
 
+'''
+    # Implementando o protocolo do "Iterator" em Python
+    # Essa é apenas uma aula para introduzir os protocolos de collections.abc no
+    # Python. Qualquer outro protocolo poderá ser implementando seguindo a mesma
+    # estrutura usada nessa aula.
+    # https://docs.python.org/3/library/collections.abc.html
+
+    A classe abstrata Sequence define uma interface comum para sequências em Python, 
+    como listas, tuplas e strings. Isso significa que qualquer classe que implementa 
+    a interface Sequence deve fornecer os métodos definidos nela,
+    como __len__, __getitem__, __iter__ e __contains__.
+
+    * __len__(): Retorna o comprimento da sequência.
+    * __getitem__(): Retorna o item na posição especificada.
+    * __setitem__(): Define o item na posição especificada.
+    * __delitem__(): Remove o item na posição especificada.
+    * __contains__(): Verifica se a sequência contém o item especificado.
+    * __iter__(): Retorna um iterador para a sequência.
+    * __reversed__(): Retorna um iterador para a sequência reversa.
+
+    Além desses métodos abstratos, a classe Sequence também define alguns métodos mixin que podem ser sobrescritos, mas não são necessários para implementar a interface Sequence. Esses métodos incluem:
+
+    * index(): Obtém o índice de um elemento na sequência.
+    * count(): Conta o número de vezes que um elemento aparece na sequência.
+
+    Alguns exemplos de classes que implementam a interface Sequence incluem:
+
+    * list(): Listas são sequências mutáveis que podem ser criadas usando a função list().
+    * tuple(): Tuplas são sequências imutáveis que podem ser criadas usando a função tuple().
+    * str(): Strings são sequências imutáveis de caracteres que podem ser criadas usando a função str().
+'''
+from collections.abc import Sequence
+
+class MySequence(Sequence):
+
+  def __init__(self, *data): # construtor
+    self.data = list(data)
+
+  def __len__(self): # Retorna o comprimento da sequência.
+    return len(self.data)
+  
+  def __iter__(self): # Retorna um iterador para a sequência.
+    return iter(self.data)
+
+  def __getitem__(self, index): # Retorna o item na posição especificada.
+    return self.data[index]
+
+  def __contains__(self, item): # Verifica se a sequência contém o item especificado.
+    for element in self.data:
+      if element == item:
+        return True
+    return False
+
+my_sequence = MySequence("a", "b", "c") # def __init__(self, data):
+print('-' * 45)
+
+print(my_sequence) # endereço de memória
+print('-' * 45)
+
+print('Quantidade de elementos = ', len(my_sequence)) # def __len__(self):
+print('-' * 45)
+
+print(my_sequence.data) # def __init__(self, data):
+print('-' * 45)
+
+print(my_sequence[0]) # def __getitem__(self, index):
+print(my_sequence[1]) # def __getitem__(self, index):
+print(my_sequence[2]) # def __getitem__(self, index):
+print('-' * 45)
+
+print("z" in my_sequence) # def __contains__(self, item):
+print("a" in my_sequence) # def __contains__(self, item):
+print('-' * 45)
+
+print(*my_sequence) # def __getitem__(self, index):
+print('-' * 45)
+
+print('Uso de "for":')
+for i in my_sequence: # def __getitem__(self, index):
+  print(i)
+print('----------')
+print('Uso de "for":')
+for i in my_sequence: # def __getitem__(self, index):
+  print(i)
+print('-' * 45)
+
+print('<==========================================================>')
+
+from collections.abc import Sequence
+
+class MySequence(Sequence):
+
+    def __init__(self): # construtor
+        self._items = []
+
+    def __len__(self): # retorna o comprimento da sequência
+        return len(self._items)
+    
+    def __iter__(self): # retorna um iterador para a sequência
+        for item in self._items:
+            yield item
+    
+    def append(self, *values): # adicionar valores na sequência
+        for value in values:
+            self._items.append(value) 
+
+    def __getitem__(self, index): # retorna o item na posição especificada
+        return self._items[index]
+
+    def __setitem__(self, index, item): # atualiza um elemento da sequência pelo seu índice
+        self._items[index] = item
+
+    def __delitem__(self, index): # deleta (apaga) um elemento da sequência pelo seu índice
+        del self._items[index]
+
+    def __contains__(self, item): # verifica se a sequência contém o item especificado
+        return item in self._items  
+
+    def __reversed__(self): # retornar sequencia na ordem inversa
+        for item in reversed(self._items):
+            yield item
+
+sequence = MySequence() # def __init__(self):
+
+sequence.append('a') # def append(self, *values):
+sequence.append('b') # def append(self, *values):
+sequence.append('c') # def append(self, *values):
+sequence.append('d') # def append(self, *values):
+print('-' * 45)
+
+print('Total elementos na sequencia =>', len(sequence)) # def __len__(self):
+print('-' * 45)
+ 
+print('1º elemento =>', sequence[0]) # def __getitem__(self, index):
+print('2º elemento =>', sequence[1]) # def __getitem__(self, index):
+print('3º elemento =>', sequence[2]) # def __getitem__(self, index):
+print('4º elemento =>', sequence[3]) # def __getitem__(self, index):
+print('-' * 45)
+
+sequence[3] = 'z' # def __setitem__(self, index, item):
+print('Sequencia alterada =>', *sequence) # def __getitem__(self, index):
+print('-' * 45)
+
+del sequence[3]  # def __delitem__(self, index):
+
+print('Uso do "for":')
+for items in sequence: # def __getitem__(self, index):
+    print(items)
+print('-' * 10)
+print('Uso do "for":')
+for items in sequence: # def __getitem__(self, index):
+    print(items)
+print('-' * 45)
+
+print('Letra "a" esta na sequencia =>','a' in sequence) # def __contains__(self, item):
+print('Letra "z" esta na sequencia =>','z' in sequence) # def __contains__(self, item):
+print('-' * 45)
+
+print('Inverter sequencia =>', *reversed(sequence)) # def __reversed__(self):
+print('-' * 45)
+
+print('<==========================================================>')
+
+from collections.abc import Sequence
+
+class MyList(Sequence):
+    def __init__(self): # construtor
+        self._data = {} # dicionário
+        self._index = 0
+        self._next_index = 0 
+
+    def __len__(self): # retorna o comprimento da sequência
+        return self._index
+    
+    def __iter__(self): # retorna um iterador para a sequência
+        return self
+    
+    def append(self, *values): # adicionar valores na sequência
+        for value in values:
+            self._data[self._index] = value
+            self._index += 1
+            # resposta => {self._index: 'valor'}
+
+    def __getitem__(self, index): # obtém um elemento da sequência pelo seu índice
+        return self._data[index]
+    # resposta => lista[0] => 'Maria'
+
+    def __setitem__(self, index, value): # atualiza um elemento da sequência pelo seu índice
+        self._data[index] = value
+    # resposta => lista[0] = 'João'
+
+    def __next__(self): # possibilita desempacotar a sequência
+        if self._next_index == self._index:
+            self._next_index = 0 # retorna "index = 0" para novo "for"
+            raise StopIteration
+
+        value = self._data[self._next_index]
+        self._next_index += 1
+        return value
+    
+if __name__ == '__main__':
+    lista = MyList() # def __init__(self):
+    print(lista) # endereço de memória
+    print('-' * 45)
+
+    lista.append('Maria', 'Helena', 'Décio') # def __getitem__(self, index):
+    print(lista[0]) 
+    print(lista[1]) 
+    print(lista[2])
+    print('-' * 45)
+
+    lista[0] = 'João' # def __setitem__(self, index, value):
+    print('Nome da primeira posição alterado para', lista[0])
+    print('-' * 45)
+
+    lista.append('Luiz') # def append(self, *values):
+    print('Elementos na lista =', len(lista)) # def __len__(self):
+    print('-' * 45)
+
+    print('Lista = ', *lista) # def __next__(self)
+    print('-' * 45)
+
+    for item in lista: # def __next__(self)
+        print(item)
+    print('------')
+    for item in lista: # def __next__(self)
+        print(item)
+    print('-' * 45)
+    
+    print("João" in lista) # def __next__(self)
+    print('Ana' in lista) # def __next__(self)
+    print("Décio" in lista) # def __next__(self)
+    print('-' * 45)
