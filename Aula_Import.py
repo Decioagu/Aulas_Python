@@ -15,6 +15,7 @@ x = 16
 sqrt_x = math.sqrt(x)
 
 print(sqrt_x)
+#-----------------------------------------------------------------------------------------------
 
 '''
     Também podemos importar apenas funções específicas de um módulo. 
@@ -31,6 +32,7 @@ sqrt_x = sqrt(x)
 print(sqrt_x)
 
 # OBS: Este código imprimirá o mesmo que o código anterior.
+#-----------------------------------------------------------------------------------------------
 
 '''
     Por fim, também podemos importar todos os atributos de um módulo. 
@@ -45,6 +47,7 @@ x = 16
 sqrt_x = sqrt(x)
 
 print(pi)
+#-----------------------------------------------------------------------------------------------
 
 # Para apelidar uma função do modulo adicione no final da importação "as" e "apelido", exemplo:
 
@@ -55,3 +58,19 @@ x = 16
 raiz_quadrada = raiz(x)
 
 print(raiz_quadrada)
+#-----------------------------------------------------------------------------------------------
+
+import pprint
+produtos = [
+    {'nome': 'p1', 'preco': 20, },
+    {'nome': 'p2', 'preco': 10, },
+    {'nome': 'p3', 'preco': 30, },
+    {'nome': 'p4', 'preco': 50, },
+    {'nome': 'p5', 'preco': 5, },
+]
+
+print(*produtos, sep='\n') # desempacotar lista
+print()
+print(produtos, sep='\n') # desempacotar lista
+print()
+pprint.pprint(produtos) # desempacotar lista
