@@ -18,18 +18,18 @@
     # null: é um valor especial que representa ausência de valor
     
     # Ao converter de Python para JSON:
-    # Python        JSON
-    # dict          object
-    # list, tuple   array
-    # str           string
-    # int, float    number
-    # True          true
-    # False         false
-    # None          null 
+    # Python ...... JSON
+    # dict ........ object
+    # list, tuple . array
+    # str ......... string
+    # int, float .. number
+    # True ........ true
+    # False ....... false
+    # None ........ null 
 '''
 
-# Exemplo JSON:
-
+#-----------------------------------------------------------------------------
+# Exemplo OBJETO em JSON:
 # JSON - OBS: utilizar aspas duplas
 {
   "nome": "Bard",
@@ -42,16 +42,17 @@
   }  
 }
 '''
-    Este arquivo JSON representa um objeto com as seguintes propriedades:
+    * OBS:
+    Este arquivo JSON representa "um objeto" com as seguintes propriedades:
     # nome: O nome do objeto.
     # idade: A idade do objeto.
     # espécie: A espécie do objeto.
     # habilidades: Uma lista de habilidades do objeto.
     # localização: Um objeto que representa a localização do objeto.
 '''
+print('===================================================================')
 
-# Aqui está outro exemplo de um arquivo JSON:
-
+# Exemplo LISTA DE OBJETOS em JSON:
 # JSON - OBS: utilizar aspas duplas
 [
   {
@@ -67,42 +68,89 @@
 ]
 
 '''
-    Este arquivo JSON representa uma lista de objetos, cada um com as seguintes propriedades:
+    * OBS:
+    Este arquivo JSON representa "uma lista de objetos", cada um com as seguintes propriedades:
     # nome: O nome do produto.
     # preço: O preço do produto.
     # quantidade: A quantidade do produto.
 '''
 
 #-----------------------------------------------------------------------------
-
+# diferença entre json.dump() e json.dumps()
 '''
-    json.dump() e json.dumps() são duas funções do módulo json em Python que são usadas para serializar dados 
-    Python em formato JSON. A principal diferença entre as duas funções é que json.dump() serializa os dados 
-    para um arquivo, enquanto json.dumps() serializa os dados para uma string.
-
-    Para usar json.dump(), você precisa passar dois argumentos para a função: os dados que você deseja serializar 
-    e o objeto de arquivo onde deseja escrever os dados. Por exemplo, o seguinte código serializa um dicionário 
-    Python para um arquivo chamado data.json:
+    json.dump() e json.dumps() são duas funções do módulo json em Python que são usadas para 
+    serializar dados Python em formato JSON. A principal diferença entre as duas funções é 
+    que json.dump() serializa os dados para um arquivo, enquanto json.dumps() serializa os 
+    dados para uma string.
 '''
-
+# json.dump()
 import json
 
-data = {
-  "nome": "Bard",
-  "idade": 3,
-  "especie": "IA",
-  "habilidades": ["gerar texto", "traduzir idiomas", "responder perguntas"],
-  "localizacao": {
-    "latitude": -22.909722,
-    "longitude": -43.210278
-  },
-  "numeros": (1, 2, 3, 4, 5)
-}
+dados = {"nome": "Fulano", "idade": 30}
 
-json_data = json.dumps(data)
-print(json_data) # cria string json
+# dados = arquivo "data.json"
+with open("data.json", "w") as f:
+    ver = json.dump(dados, f)
+
+print(type(ver)) # <class 'NoneType'>
+print(ver)
+
+print('===================================================================')
+
+# json.dumps()
+import json
+
+dados = {"nome": "Fulano", "idade": 30}
+
+# dados = objeto srting "json_str"
+json_str = json.dumps(dados) # <class 'str'>
+
+print(type(json_str)) # <class 'str'>
+print(json_str)
+#-----------------------------------------------------------------------------
+
+# diferença entre json.load() e json.loads()
+'''
+    Os métodos json.load() e json.loads() são usados para deserializar dados JSON em Python. 
+    A diferença entre os dois métodos é que json.load() aceita um objeto de arquivo como entrada, 
+    enquanto json.loads() aceita uma string como entrada.
+'''
+# json.load()
+import json
+
+# ler arquivo JSON
+with open("data.json", "r") as f:
+    dados = json.load(f) # string para objeto 'dict'
+
+print(type(dados)) # <class 'dict'>
+print(dados) 
+
+print('===================================================================')
+
+# json.loads()
+import json
+
+# string
+json_string = """
+{
+    "nom": "John Doe",
+    "age": 30,
+    "adresse": "123 Main Street, Anytown, USA"
+}
+"""
+
+person = json.loads(json_string) # string para objeto 'dict'
+
+print(type(person)) # <class 'dict'>
+print(person)
 
 #-----------------------------------------------------------------------------
+
+# uso de json.dump() e json.load() (arquivo JSON)
+'''
+  A função  no Python é usada para carregar um objeto JSON de um arquivo ou uma string. 
+  Esta função retorna um objeto Python que representa o objeto JSON carregado.json.load()
+'''
 
 import json
 
@@ -135,9 +183,10 @@ with open("data.json", "r") as texto:
   print(f'{ver["idade"]=}')
 #-----------------------------------------------------------------------------
 
+# uso de json.dumps() e json.loads() (string JSON)
 '''
     A função json.loads() é uma função da biblioteca padrão do Python 
-    que é usada para converter um objeto JSON em um objeto Python.
+    que é usada para converter um objeto JSON em um objeto Python (dicionário).
 '''
 import json
 from pprint import pprint
@@ -156,13 +205,14 @@ string_json = '''
 filme = json.loads(string_json)
 
 print(filme)
-print('-' * 100)
-print(filme["year"])
-print('-' * 100)
-pprint(filme)
 
-print('===================================================================')
+exibir_joson = json.dumps(filme) # formatação -> tipo "str"
 
+print(exibir_joson)
+
+#-----------------------------------------------------------------------------
+
+# Exemplo json.dumps e json.loads com string
 import json
 from typing import TypedDict
 
@@ -213,4 +263,49 @@ print('-' * 100)
 exibir_joson = json.dumps(filme, ensure_ascii=False, indent=2) # formatação -> tipo "str"
 
 print(exibir_joson)
+#-----------------------------------------------------------------------------
+
+# Exemplo json.dump e json.load com arquivos
+import json
+import os
+
+NOME_ARQUIVO = 'aula177.json'
+
+#============== CAMINHO_ABSOLUTO_ARQUIVO ============== 
+# exibe caminho da pasta atual
+CAMINHO_ABSOLUTO_ARQUIVO = os.path.abspath(
+    os.path.join(
+        os.path.dirname(__file__), 
+        NOME_ARQUIVO
+    )
+)
+#=====================================================
+
+#============== equivalente procedimento acima ============== 
+# CAMINHO_ABSOLUTO_ARQUIVO = os.path.abspath (NOME_ARQUIVO )
+#============================================================
+
+
+print('caminho onde esta o arquivo python =',__file__)
+print(CAMINHO_ABSOLUTO_ARQUIVO)
+
+filme = {
+    'title': 'O Senhor dos Anéis: A Sociedade do Anel',
+    'original_title': 'The Lord of the Rings: The Fellowship of the Ring',
+
+    'is_movie': True,
+    'imdb_rating': 8.8,
+    'year': 2001,
+    'characters': ['Frodo', 'Sam', 'Gandalf', 'Legolas', 'Boromir'],
+    'budget': None
+}
+
+# criar e escrever em um objeto JSON
+with open(CAMINHO_ABSOLUTO_ARQUIVO, 'w') as arquivo:
+    json.dump(filme, arquivo, ensure_ascii=False, indent=2)
+
+# ler arquivo objeto JSON
+with open(CAMINHO_ABSOLUTO_ARQUIVO, 'r') as arquivo:
+    filme_do_json = json.load(arquivo)
+    print(filme_do_json)
 #-----------------------------------------------------------------------------

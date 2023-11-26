@@ -15,11 +15,35 @@
 # os.path só trabalha com caminhos de arquivos e não faz nenhuma
 # operação de entrada/saída (I/O) com arquivos em si.
 
+
+
 import os
 
 os.system('clear') # limpa o terminal
 os.system('echo "Hello world"') # repete o texto como um print()
 #-----------------------------------------------------------------------------------------------
+
+# exibir rota
+'''
+  A função em Python é usada para retornar o caminho absoluto de um arquivo ou diretório. 
+  Essa função usa um objeto semelhante a um caminho como um argumento e retorna uma versão 
+  normalizada do caminho.
+'''
+# OBS: novos caminhos estão armazenados em memória
+import os
+
+# local
+current_dir = os.path.abspath('.')
+print(current_dir) # resposta = P:\REPOSITORIO\PUBLICO\PYTHON_UDEMY
+
+# arquivo
+file_path = os.path.abspath('data.json')
+print(file_path) # resposta = P:\REPOSITORIO\PUBLICO\PYTHON_UDEMY\data.json
+
+# pasta
+dir_path = os.path.abspath('BANCO')
+print(dir_path) # resposta = P:\REPOSITORIO\PUBLICO\PYTHON_UDEMY\BANCO
+#-----------------------------------------------------------------------------
 
 # pasta
 '''
@@ -39,7 +63,6 @@ caminho = os.path.join('Desktop', 'curso', 'arquivo.txt')
 print(caminho)
 print(os.path.dirname(caminho)) # exibir diretório
 print(os.path.basename(caminho)) # exibir arquivo
-
 
 print('<==========================================================>')
 
