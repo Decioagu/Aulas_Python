@@ -83,7 +83,7 @@ print('===================================================================')
     que json.dump() serializa os dados para um arquivo, enquanto json.dumps() serializa os 
     dados para uma string.
 '''
-# json.dump()
+# json.dump() (arquivo JSON)
 import json
 
 dados = {"nome": "Fulano", "idade": 30}
@@ -97,7 +97,7 @@ print(ver)
 
 print('===================================================================')
 
-# json.dumps()
+# json.dumps() (string JSON)
 import json
 
 dados = {"nome": "Fulano", "idade": 30}
@@ -109,13 +109,13 @@ print(type(json_str)) # <class 'str'>
 print(json_str)
 #-----------------------------------------------------------------------------
 
-# diferença entre json.load() e json.loads()
+# diferença entre json.load() e json.loads() 
 '''
     Os métodos json.load() e json.loads() são usados para deserializar dados JSON em Python. 
     A diferença entre os dois métodos é que json.load() aceita um objeto de arquivo como entrada, 
     enquanto json.loads() aceita uma string como entrada.
 '''
-# json.load()
+# json.load() (arquivo JSON)
 import json
 
 # ler arquivo JSON
@@ -127,7 +127,7 @@ print(dados)
 
 print('===================================================================')
 
-# json.loads()
+# json.loads() (string JSON)
 import json
 
 # string
@@ -212,7 +212,7 @@ print(exibir_joson)
 
 #-----------------------------------------------------------------------------
 
-# Exemplo json.dumps e json.loads com string
+# Exemplo json.dumps e json.loads (string JSON)
 import json
 from typing import TypedDict
 
@@ -265,7 +265,7 @@ exibir_joson = json.dumps(filme, ensure_ascii=False, indent=2) # formatação ->
 print(exibir_joson)
 #-----------------------------------------------------------------------------
 
-# Exemplo json.dump e json.load com arquivos
+# Exemplo json.dump e json.load  (arquivos JSON)
 import json
 import os
 
