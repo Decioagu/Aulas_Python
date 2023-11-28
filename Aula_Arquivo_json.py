@@ -90,7 +90,7 @@ dados = {"nome": "Fulano", "idade": 30}
 
 # dados = arquivo "data.json"
 with open("data.json", "w") as f:
-    ver = json.dump(dados, f)
+    ver = json.dump(dados, f) # escrever
 
 print(type(ver)) # <class 'NoneType'>
 print(ver)
@@ -103,7 +103,7 @@ import json
 dados = {"nome": "Fulano", "idade": 30}
 
 # dados = objeto srting "json_str"
-json_str = json.dumps(dados) # <class 'str'>
+json_str = json.dumps(dados) # escrever com <class 'str'>
 
 print(type(json_str)) # <class 'str'>
 print(json_str)
@@ -120,7 +120,7 @@ import json
 
 # ler arquivo JSON
 with open("data.json", "r") as f:
-    dados = json.load(f) # string para objeto 'dict'
+    dados = json.load(f) # ler arquivo para objeto 'dict'
 
 print(type(dados)) # <class 'dict'>
 print(dados) 
@@ -139,7 +139,7 @@ json_string = """
 }
 """
 
-person = json.loads(json_string) # string para objeto 'dict'
+person = json.loads(json_string) # ler string para objeto 'dict'
 
 print(type(person)) # <class 'dict'>
 print(person)

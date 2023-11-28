@@ -1,13 +1,11 @@
 '''
     A função reduce() do Python é usada para reduzir uma sequência a um único valor. 
-    A função recebe dois argumentos: uma função e uma sequência. A função é aplicada 
-    a cada par de elementos da sequência, começando pelos dois primeiros elementos. 
-    O resultado da aplicação da função aos dois primeiros elementos é então usado como 
-    entrada para a próxima aplicação da função, e assim por diante.
+    Faz a soma dos valores em uma lista ou lista de objetos
 '''
 
 from functools import reduce
 
+# lista
 numbers = [1, 2, 3, 4, 5]
 
 # Usa reduce() para calcular a soma dos elementos da lista
@@ -20,6 +18,7 @@ print(total)
 
 from functools import reduce
 
+# lista de objetos
 preco_produtos = [
     {'nome': 'Produto 5', 'preco': 10.00},
     {'nome': 'Produto 1', 'preco': 22.32},
