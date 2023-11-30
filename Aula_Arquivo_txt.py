@@ -90,3 +90,5 @@ with open(caminho_arquivo, 'r') as arquivo: # with (abre e fecha)
 
 # renomear arquivo ou mover para outra local
 os.rename(caminho_arquivo, 'arquivo.txt')
+
+#-----------------------------------------------------------------------------------------------

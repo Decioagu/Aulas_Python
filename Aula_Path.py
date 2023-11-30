@@ -77,3 +77,28 @@ print(novo_arquivo.exists()) # existe?
 print(novo_arquivo.absolute()) # caminho
 # novo_arquivo.unlink() # apaga o texto
 #-----------------------------------------------------------------------------------------------
+
+# criar arquivo
+import shutil
+from pathlib import Path
+
+# Caminhos para pasta
+CAMINHO_RAIZ = Path(__file__).parent
+CAMINHO_DIR = CAMINHO_RAIZ / 'pasta_de_arquivos_txt'
+
+
+# limpar diretórios caso exista
+shutil.rmtree(CAMINHO_DIR, ignore_errors=True) # apagar pasta (delete)
+
+# Cria o diretório para a aula
+CAMINHO_DIR.mkdir(exist_ok=True)
+
+# função para criar arquivo de texo
+def criar_arquivos(qtd: int, zip_dir: Path): # (quantidade, pasta)
+    for i in range(qtd):
+        i += 1
+        texto = 'arquivo_%s' % i # Nº arquivos
+        with open(zip_dir / f'{texto}.txt', 'w') as arquivo:
+            arquivo.write(texto)
+
+criar_arquivos(5, CAMINHO_DIR) # instanciar função "criar_arquivos"

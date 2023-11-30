@@ -233,12 +233,12 @@ shutil.move(NOVA_PASTA_3 , NOVA_PASTA_1)
     OBS: caso pasta não exista haverá erro de exceção utilize "ignore_errors=True"
 
 '''
-shutil.rmtree(NOVA_PASTA_4, ignore_errors=True)
+shutil.rmtree(NOVA_PASTA_4, ignore_errors=True) # apagar pasta (delete)
 
 # cria uma nova pasta com todos os arquivos
 shutil.copytree(NOVA_PASTA, NOVA_PASTA_4)
 
-# apagar arquivo
+# apagar arquivo (delete)
 os.unlink(NOVA_PASTA_4 + '/SUN.docx')
 
 # exibir rotas/pastas/arquivos
