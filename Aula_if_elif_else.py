@@ -1,11 +1,8 @@
-"""
-Operação ternária (condicional de uma linha)
-<valor> if <condicao> else <outro valor>
-"""
-condicao = 11 == 11
-variavel = 'Verdade' if condicao else 'Falso'
-print(f'\n{variavel}\n')
 
+'''
+    As estruturas condicionais permitem que o código seja executado de forma diferente, 
+    dependendo do valor de uma expressão.
+'''
 x = "1"
 if x == 1:
     print("Opção 1")
@@ -44,17 +41,7 @@ else: print(f'{x} ≠ 1')
 print(f'{x} = 1' if x == 1 else f'{x} ≠ 1')
 
 # ----------------------------------------------------------------------------
-the_list = []
-for x in range(10):
-    the_list.append(1 if x % 2 == 0 else 0)
-print(the_list)
 
-# OU
-
-the_list = [1 if x % 2 == 0 else 0 for x in range(10)]
-print(the_list)
-
-# ----------------------------------------------------------------------------
 """
 Valores padrão para parâmetros
 Ao definir uma função, os parâmetros podem
@@ -72,3 +59,24 @@ def soma(x, y, z=None):
 
 soma(7, 9, 0)
 soma(y=9, x=7)
+# ----------------------------------------------------------------------------
+
+"""
+Operação ternária (condicional de uma linha)
+<valor> if <condicao> else <outro valor>
+"""
+condicao = 11 == 11
+variavel = 'Verdade' if condicao else 'Falso'
+print(f'\n{variavel}\n')
+# ----------------------------------------------------------------------------
+
+the_list = []
+for x in range(10):
+    the_list.append(1 if x % 2 == 0 else 0)
+print(the_list)
+
+# OU
+
+the_list = [1 if x % 2 == 0 else 0 for x in range(10)]
+print(the_list)
+

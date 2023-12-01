@@ -4,7 +4,7 @@
 # Como criar ambientes virtuais
 # Abra a pasta do seu projeto no terminal
 # e digite:
-'''
+
 
 *********************** Windows PowerShell**************************
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
@@ -55,7 +55,7 @@ pip install "pacote"=="código"
 
 # instalar versão mais recente
 pip install "pacote" --upgrade
-
+'''
 
 
 

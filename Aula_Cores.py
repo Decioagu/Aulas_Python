@@ -1,4 +1,9 @@
 # TABELA DE CORES
+
+'''
+    Para adicionar cores em texto em Python, você pode usar as sequências de escape ANSI. 
+    Essas sequências são usadas para controlar as cores do texto exibido no terminal.
+'''
 limpar = '\033[m'
 preto = '\033[30m'
 vermelho = '\033[31m'
@@ -18,3 +23,14 @@ branco = '\033[97m'
 sub = '\033[4m'
 neg = '\033[1m'
 inv = '\033[7m'
+
+'''
+Os tipos de formatação possíveis são:
+Negrito: 1
+Sublinhado: 4
+Invertido: 7
+'''
+print("\033[31mOlá, mundo!\033[0m\n")
+print("\033[1;31mOlá, mundo!\033[0m\n")
+print("\033[4;31mOlá, mundo!\033[0m\n")
+print("\033[7;31mOlá, mundo!\033[0m\n")

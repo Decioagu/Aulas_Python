@@ -1,3 +1,9 @@
+'''
+ Função é um bloco de código que pode ser reutilizado. 
+ As funções são uma ferramenta poderosa que pode ajudar a tornar 
+ o código mais legível, organizado e eficiente.
+'''
+
 # Função soma embutido no Python
 numeros = [1, 2, 3, 4, 5]
 soma = sum(numeros)
@@ -124,9 +130,7 @@ volume = piscina(5, largura=4, comprimento=5)
 print('O volume é: ', volume)
 #-----------------------------------------------------------------------------------------------
 
-
-
-print()
+# função com valor global
 def teste(x):
     global a
     print(f'Valor de "a" DENTRO do "def" = {a}')
@@ -141,30 +145,38 @@ teste(a)
 print(f'Valor de "a" FORA do "def" = {a}')
 
 
-print()
+#-----------------------------------------------------------------------------------------------
+
+# função soma e multiplicação
 def teste(a, b):
     soma = a + b
     mult = a * b
-    return soma
+    return (soma, mult)
 a = int(input('a = '))
 b = int(input('b = '))
-x = teste(a, b)
-print(f'soma_ab = {x}')
+x, y = teste(a, b)
+print(f'soma_ab = {x}, multiplicação_ab = {y}')
+#-----------------------------------------------------------------------------------------------
 
+# função soma de elementos em uma lista
 def list_sum(lst):
     s = 0
     for elem in lst:
         s += elem
     return s
 print(list_sum([5, 4, 3]))
+#-----------------------------------------------------------------------------------------------
 
-def strange_list_fun(n):
-    strange_list = []
+# lista de números
+def range_em_lista(n):
+    lista = []
     for i in range(0, n):
-        strange_list.append(i)
-    return strange_list
-print(strange_list_fun(5))
+        lista.append(i)
+    return lista
+print(range_em_lista(5))
+#-----------------------------------------------------------------------------------------------
 
+# função média de aluno
 def notas(* num, sit=False):
     """
     A função notas calcula a média do aluno independente de quantas notas
@@ -197,9 +209,9 @@ resp = notas(7, 4, 5, 5, sit=True)
 print(resp)
 print()
 help(notas)
+#-----------------------------------------------------------------------------------------------
 
-
-print()
+# formatação de texto
 def titulo(txt):
     """
     Formata texto em um padrão em caixa
@@ -211,9 +223,9 @@ def titulo(txt):
     print(f'= {txt} =')
     print(f'=' * (len(txt) + 4))
 titulo('Décio Santana de Aguiar'.upper())
+#-----------------------------------------------------------------------------------------------
 
-
-print()
+# função para opções
 def opcao(msg):
     """
     Testa caractere e permanece em loop infinito até usuário
@@ -236,10 +248,9 @@ def opcao(msg):
             print(f'Digite [s] para CONTINUAR ou [n] para SAIR.')
     return op
 menu = opcao(f'Quer continuar? [S/N]')
+#-----------------------------------------------------------------------------------------------
 
-
-
-print()
+# testar número inteiro
 def teste_int(msg):
     """
     Testa caractere e permanece em loop infinito até usuário
@@ -263,8 +274,9 @@ def teste_int(msg):
 
 num_inteiro = teste_int(f'Digite um número inteiro: ')
 print(f'\nNúmero real = {num_inteiro} => {type(num_inteiro)}')
+#-----------------------------------------------------------------------------------------------
 
-print()
+# testar número float
 def teste_float(msg):
     """
     Testa caractere e permanece em loop infinito até usuário
@@ -291,8 +303,9 @@ def teste_float(msg):
 
 num_float = teste_float(f'Digite um número real: ')
 print(f'\nNúmero real = {num_float} => {type(num_float)}')
+#-----------------------------------------------------------------------------------------------
 
-
+# formatação de moeda
 def moeda(valor, moeda='R$'):
     """
     Formata na impressão um Valor Numérico 'int' em Moeda 'str'

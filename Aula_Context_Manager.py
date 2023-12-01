@@ -8,8 +8,15 @@
     traceback. Se ele retornar True, exceção no with será
     suprimidas.
 
-    Ex:
-    with open('aula149.txt', 'w') as arquivo:
+    O método da CLASSE gerenciadora de contexto (Context Manager) pode capturar e tratar exceções, 
+    garantindo que os recursos sejam liberados adequadamente mesmo se ocorrer um erro. Isso evita 
+    vazamentos de recursos e possíveis travamentos, melhora a legibilidade do código e facilita a 
+    compreensão do fluxo geral do seu programa.
+
+    Um exemplo de (Context Manager) é considerar um cenário em que você deseja abrir um arquivo, 
+    ler seu conteúdo e fechá-lo. O uso de uma classe gerenciadora de contexto garante que o arquivo 
+    seja fechado mesmo se ocorrer um erro durante o processo de leitura.
+
 '''
 
 class MyOpen: # class primaria

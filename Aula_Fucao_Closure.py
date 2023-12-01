@@ -17,8 +17,17 @@
     específico ocorre. Os closures são usados para implementar callbacks em Python.
     
 '''
+def comprimente(name):
+  def interno():
+    print(f"Olá, {name}!")
+  return interno # retorna função sem executar
+
+agradecer = comprimente("Alice")
+
+agradecer() # Chama a função closure
 
 #---------------------------------------------------------------------
+
 def criar_saudacao(saudacao):
     def saudar(nome):
         return f'{saudacao}, {nome}!'
@@ -33,16 +42,7 @@ for nome in ['Maria', 'Joana', 'Luiz']:
 
 
 #---------------------------------------------------------------------
-def comprimente(name):
-  def interno():
-    print(f"Olá, {name}!")
-  return interno # retorna função sem executar
 
-agradecer = comprimente("Alice")
-
-agradecer() # Chama a função closure
-
-#---------------------------------------------------------------------
 '''Exercício - Adiando execução de funções'''
 def fora(x):
     y = x
