@@ -42,8 +42,8 @@ As strings em Python são __unicode__, o que significa que elas podem representa
 - Em Python, um conjunto ou __set()__ é uma coleção de __itens únicos__. 
 Os conjuntos são semelhantes às listas, mas têm algumas diferenças importantes:
 
-___Os conjuntos não são ordenados___: Os elementos de um conjunto não têm uma ordem definida.
-___Os conjuntos não permitem itens duplicados___: Cada elemento de um conjunto deve ser único.
+- ___Os conjuntos não são ordenados___: Os elementos de um conjunto não têm uma ordem definida.
+- ___Os conjuntos não permitem itens duplicados___: Cada elemento de um conjunto deve ser único.
 ---
 
 **Aula_DICIONARIO.py**
