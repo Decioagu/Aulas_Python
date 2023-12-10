@@ -14,5 +14,6 @@ pessoa = {
     mapeia nomes de espaço reservado para seus valores correspondentes. 
 '''
 template = string.Template(texto) 
-result = template.safe_substitute(pessoa) # método usado para substituir variáveis em um template. 
+# método usado para substituir variáveis em um template. 
+result = template.safe_substitute(pessoa) 
 print(result)

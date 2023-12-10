@@ -1,5 +1,7 @@
 '''
-Os métodos de lista são funções que podem ser usadas para manipular listas. Eles são métodos porque operam em um objeto de lista específico, em oposição a funções, que operam em valores.
+Em Python, uma lista é uma estrutura de dados que permite armazenar uma coleção de itens 
+em uma única variável. Os itens da lista podem ser de qualquer tipo, incluindo números, 
+strings, objetos ou até mesmo outras listas.
 
 Alguns métodos de lista comuns incluem:
 

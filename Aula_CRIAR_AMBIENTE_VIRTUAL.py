@@ -55,6 +55,12 @@ pip install "pacote"=="código"
 
 # instalar versão mais recente
 pip install "pacote" --upgrade
+
+
+# instalar jupyter notebook
+py -m pip install notebook
+# ativar jupyter notebook
+jupyter notebook
 '''
 
 

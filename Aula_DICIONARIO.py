@@ -1,5 +1,8 @@
 '''
-Os métodos de dicionário em Python são funções que podem ser usadas para manipular dicionários. Eles são métodos porque operam em um objeto de dicionário específico, em oposição a funções, que operam em valores.
+Em Python, um dicionário é uma estrutura de dados que permite armazenar uma coleção 
+de dados relacionados, cada um com uma chave e um valor. As chaves são únicas e servem 
+para identificar os valores. Os valores podem ser de qualquer tipo, incluindo números, 
+strings, objetos ou até mesmo outros dicionários.
 
 Alguns métodos de dicionário comuns incluem:
 

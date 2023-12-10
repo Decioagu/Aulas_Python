@@ -1,8 +1,8 @@
 '''
-    Um closure em Python é uma função que pode acessar variáveis mesmo 
-    depois que a função que a criou terminou de executar. Isso é possível porque o 
-    closure captura as variáveis em seu escopo externo e as mantém em memória 
-    mesmo depois que a função externa termina.
+    Um closure em Python é uma função que pode acessar variáveis mesmo depois que 
+    a função que a criou terminou de executar. Em resumo uma função externa retorna 
+    para uma função mais interna e isso é possível porque o closure captura as variáveis 
+    em seu escopo externo e as mantém em memória mesmo depois que a função externa termina.
 
     Os closures podem ser usados para implementar uma variedade de padrões de design, incluindo:
 

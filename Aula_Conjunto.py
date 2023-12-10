@@ -7,6 +7,14 @@
 
 # Métodos úteis Set:
 # add, update, clear, discard
+'''
+Em Python, um conjunto é uma coleção de itens únicos. Os conjuntos são 
+representados pelo tipo de dados set.
+Os conjuntos são semelhantes às listas, mas têm algumas diferenças importantes:
+
+* Os conjuntos são não ordenados: Os elementos de um conjunto não têm uma ordem definida.
+* Os conjuntos não permitem itens duplicados: Cada elemento de um conjunto deve ser único.
+'''
 s1 = set() # criar conjunto
 print(s1)
 s1.add('Luiz') # adicionar no conjunto

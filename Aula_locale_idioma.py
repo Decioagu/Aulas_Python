@@ -1,5 +1,5 @@
 '''
-    O módulo  em Python fornece funções para trabalhar com configurações regionais e de idioma, 
+    O módulo locale em Python fornece funções para trabalhar com configurações regionais e de idioma, 
     permitindo que você adapte seus programas às configurações de idioma e cultura do usuário. 
     Ele oferece suporte a uma ampla gama de configurações regionais, incluindo aquelas que 
     abrangem diferentes idiomas, formatos de data e moeda, e convenções de classificação.locale

@@ -2,7 +2,7 @@
 # https://docs.python.org/3/library/calendar.html
 '''
     A função calendar() é uma função interna em Python que retorna um calendário. 
-    O calendário pode ser mensal, semanal ou anual. A função calendar() usa dois argumentos:
+    O calendário pode ser mensal, semanal ou anual.
 '''
 import calendar
 

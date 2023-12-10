@@ -48,8 +48,11 @@ print(next(generator))
 
 # --------------------------------------------------------------
 '''
-    A yield palavra-chave em Python é usada para criar geradores. Geradores são iteradores 
-    que podem ser usado para produzir uma sequência de valores, um de cada vez.
+    Em Python, o "yield" é uma palavra-chave que é usada para criar geradores. 
+    Geradores são objetos que podem ser iterados, mas que não armazenam todos 
+    os seus valores na memória ao mesmo tempo. Isso os torna mais eficientes do 
+    que listas ou tuplas, que precisam armazenar todos os seus valores antes de 
+    poderem ser iterados.
 '''
 def gerador():
   yield 1
@@ -62,7 +65,8 @@ print(next(gerador))
 print(next(gerador))
 print(next(gerador))
 
-# --------------------------------------------------------------
+print('===================================================================')
+
 # Introdução às Generator functions em Python
 # generator = (n for n in range(1000000))
 
@@ -74,8 +78,9 @@ def generator(n=0, maximum=10):
         if n >= maximum:
             return
 
+gen = generator(maximum=20)
 
-gen = generator(maximum=1000000)
+# print(*gen)
 for n in gen:
     print(n)
 # --------------------------------------------------------------

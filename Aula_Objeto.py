@@ -45,3 +45,15 @@ print()
 dicionario = {'nome':'Décio', 'idade':40, 'sexo':'masculino'}
 print(f'{dicionario=} | tipo {type(dicionario)}')
 print(isinstance(dicionario, dict))
+
+'''
+Objetos iteráveis:
+Um iterável é um objeto que pode ser iterado, ou seja, que pode ser percorrido:
+# Listas 
+# Tuplas
+# Strings
+# Conjuntos
+# Dicionários
+# Objetos arquivo (txt, csv, json)
+# Geradores (uma expressão que retorna um objeto gerador)
+'''

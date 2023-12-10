@@ -1,6 +1,6 @@
 # aula 236 até 238
 '''
-    Dunder methods, ou métodos mágicos, são métodos especiais Python que começam e terminam 
+    Dunder methods, ou métodos mágicos, são métodos especiais em Python que começam e terminam 
     com dois underscores (por exemplo, __str__ ou __add__). Eles são usados para implementar 
     a funcionalidade de operadores e funções built-in.
 

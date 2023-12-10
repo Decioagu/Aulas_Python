@@ -14,7 +14,23 @@
 # os.path.exists: verifica se um caminho especificado existe.
 # os.path só trabalha com caminhos de arquivos e não faz nenhuma
 # operação de entrada/saída (I/O) com arquivos em si.
+'''
+    O módulo os em Python fornece uma interface para interagir com o sistema operacional. 
+    Ele fornece funções e variáveis para manipular arquivos, diretórios, processos, 
+    e outros recursos do sistema operacional.
 
+    Algumas das funções mais comuns do módulo os incluem:
+
+    os.path.join(): Combina dois ou mais caminhos de arquivo em um único caminho.
+    os.path.exists(): Verifica se um arquivo ou diretório existe.
+    os.path.isfile(): Verifica se um caminho é um arquivo.
+    os.path.isdir(): Verifica se um caminho é um diretório.
+    os.listdir(): Retorna uma lista de todos os arquivos e diretórios em um diretório.
+    os.makedirs(): Cria um diretório.
+    os.remove(): Remove um arquivo.
+    os.rmdir(): Remove um diretório vazio.
+    os.rename(): Renomeia um arquivo ou diretório.
+'''
 
 
 import os

@@ -1,4 +1,20 @@
 # ZIP - Compactando / Descompactando arquivos com zipfile.ZipFile
+
+'''
+ O "módulo zipfile" fornece várias funções para manipular arquivos zip, incluindo 
+ a função extractall(), que pode ser usada para descompactar todos os arquivos 
+ de um arquivo zip para um diretório especificado.
+'''
+import zipfile
+
+arquivo_zip = "arquivo.zip"
+arquivo_destino = "destino/arquivo.txt"
+
+with zipfile.ZipFile(arquivo_zip, "r") as zip:
+    zip.extract("arquivo.txt", diretorio_destino)
+
+#-------------------------------------------------------------------
+
 import os
 import shutil
 from pathlib import Path

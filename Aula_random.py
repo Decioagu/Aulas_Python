@@ -7,6 +7,9 @@
 # doc: https://docs.python.org/pt-br/3/library/random.html
 
 ''' 
+    O módulo random em Python fornece funções e classes para gerar números aleatórios. 
+    Esses números podem ser usados para criar efeitos aleatórios em seus programas.
+
     import random
     import time
     # Funções:
@@ -19,6 +22,18 @@
     import secrets 
     random = secrets.SystemRandom() # anula efeito do random.seed(0)
 '''
+
+import random
+
+# Gera um número real aleatório entre 0 e 1
+numero_aleatorio = random.random()
+print(numero_aleatorio)
+
+# Gera um elemento aleatório da lista [1, 2, 3, 4, 5]
+elemento_aleatorio = random.choice([1, 2, 3, 4, 5])
+print(elemento_aleatorio)
+
+#-----------------------------------------------------------------------------------------------
 
 import random
 
@@ -49,6 +64,12 @@ import random
 nomes = ['Luiz', 'Maria', 'Helena', 'Joana']
 random.shuffle(nomes)
 print(nomes)
+
+print('<==========================================================>')
+
+lista_ordenada = [1, 2, 3, 4, 5]
+random.shuffle(lista_ordenada)
+print(lista_ordenada)
 
 #-----------------------------------------------------------------------------------------------
 # sorteá nomes
