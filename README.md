@@ -216,6 +216,10 @@ Arquivos .env são frequentemente usados em projetos Python para armazenar confi
 -  O __módulo zipfile__ fornece várias funções para manipular __arquivos zip__, incluindo a função __extractall()__, que pode ser usada para descompactar todos os arquivos de um arquivo zip para um diretório especificado.
 ---
 
+**Aula_threads.py**
+- O uso de __threads__ é uma forma de criar objetos que podem ser executados em paralelo. Isso pode ser útil para melhorar o desempenho de um programa, pois __permite que ele execute múltiplas tarefas ao mesmo tempo__.
+---
+
 **Aula_OS**
 - O __módulo os__ em Python fornece uma interface para interagir com o sistema operacional. Ele fornece funções e variáveis para manipular arquivos, diretórios, processos, e outros recursos do sistema operacional.
 ---
