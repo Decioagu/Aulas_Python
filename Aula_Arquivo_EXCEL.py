@@ -35,7 +35,7 @@ from openpyxl.worksheet.worksheet import Worksheet # tipagem para VS Code
 
 # caminho do arquivo
 ROOT_FOLDER = Path(__file__).parent
-WORKBOOK_PATH = ROOT_FOLDER / 'excel.xlsx'
+WORKBOOK_PATH = ROOT_FOLDER / 'estudantes.xlsx'
 
 workbook = Workbook() # criar arquivo vazio do Excel
 
@@ -46,7 +46,7 @@ worksheet.cell(1, 2, 'Idade')   # (linha, coluna, valor)
 worksheet.cell(1, 3, 'Nota')    # (linha, coluna, valor)
 
 # lista de objetos
-students = [
+estudantes = [
     # nome      idade nota
     ['João',    14,   5.5],
     ['Maria',   13,   9.7],
@@ -54,16 +54,16 @@ students = [
     ['Alberto', 16,   10],
 ]
 
-# ================================ TESTE DIDATICO ============================== 
-for i, student_row in enumerate(students, start=2): # "start" manipula inicio da linha
-    for j, student_column in enumerate(student_row, start=1):
-        worksheet.cell(i, j, student_column) # (linha, coluna, valor)
-        print(f'linha = {i} |',f'coluna = {j} |', f'salvar = {student_column}')
+# ================================ TESTE DIDÁTICO ============================== 
+for i, estudante_linha in enumerate(estudantes, start=2): # "start" manipula inicio da linha
+    for j, estudante_coluna in enumerate(estudante_linha, start=1):
+        worksheet.cell(i, j, estudante_coluna) # (linha, coluna, valor)
+        print(f'linha = {i} |',f'coluna = {j} |', f'salvar = {estudante_coluna}')
 
 # ==================================== OU ======================================= 
 
 # adicionar lista de objetos
-for student in students:
+for student in estudantes:
     worksheet.append(student) # adicionar como lista
     print(student)
 # ===============================================================================
