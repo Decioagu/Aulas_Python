@@ -121,6 +121,12 @@ Exemplo: __"variável" = list(map(função, iterável))__
 - ___Gerar senhas aleatórias___: são mais seguras do que as senhas escolhidas pelo usuário.
 - ___Gerar tokens de autenticação___: são usados para garantir que um usuário está autorizado a acessar um recurso.
 ---
+
+**Aula_lifo_e_fifo.py**
+- Em Python, __LIFO__ (Last In First Out) e __FIFO__ (First In First Out) são dois tipos de estruturas de dados que são usadas para armazenar elementos em ordem em uma __lista__ de forma otimizada.
+- __LIFO__ é frequentemente usado para representar __pilhas de itens__, como uma pilha de pratos ou uma pilha de arquivos.
+- __FIFO__ é frequentemente usado para representar __filas de itens__, como uma fila de pessoas esperando para comprar ingressos ou uma fila de processos esperando para serem executados.
+---
 ---
 
 **Aula_Calendar.py**
@@ -137,6 +143,10 @@ Exemplo: __"variável" = list(map(função, iterável))__
 ---
 ---
 
+**Aula_Arquivo_TXT.py**
+- A extensão __TXT__ é uma extensão de arquivo que indica que um arquivo é um arquivo de texto simples.
+---
+
 **Aula_Arquivo_CSV.py**
 - __CSV__ (Comma Separated Values - Valores separados por vírgulas)
 ---
@@ -145,8 +155,16 @@ Exemplo: __"variável" = list(map(função, iterável))__
 - O que é __JSON__ - JavaScript Object Notation
 ---
 
-**Aula_Arquivo_TXT.py**
-- A extensão __TXT__ é uma extensão de arquivo que indica que um arquivo é um arquivo de texto simples.
+**Aula_Arquivo_EXCEL.py**
+- O __módulo openpyxl__ é uma biblioteca open-source escrita em Python utilizada para ler, escrever e manipular arquivos do __Microsoft Excel__. Ela oferece uma forma fácil e eficiente de automatizar tarefas relacionadas a planilhas.
+---
+
+**Aula_Arquivo_PDF.py**
+- O __módulo PyPDF2__ é uma biblioteca Python que permite manipular __arquivos PDF__ para __leitura e escrita__.
+---
+
+**Aula_Arquivo_ZIP.py**
+-  O __módulo zipfile__ fornece várias funções para manipular __arquivos ZIP__, que pode ser usada para __compactar e descompactar__.
 ---
 ---
 
@@ -212,15 +230,12 @@ Exemplo: "Olá, meu nome é __${nome}__ e tenho __${idade}__ anos."
 Arquivos .env são frequentemente usados em projetos Python para armazenar configurações específicas do projeto. Isso permite que as configurações sejam facilmente alteradas sem modificar o código-fonte do projeto.
 ---
 
-**Aula_ZIP.py**
--  O __módulo zipfile__ fornece várias funções para manipular __arquivos zip__, incluindo a função __extractall()__, que pode ser usada para descompactar todos os arquivos de um arquivo zip para um diretório especificado.
----
-
 **Aula_threads.py**
 - O uso de __threads__ é uma forma de criar objetos que podem ser executados em paralelo. Isso pode ser útil para melhorar o desempenho de um programa, pois __permite que ele execute múltiplas tarefas ao mesmo tempo__.
 ---
 
-**Aula_OS**
+### Aula_OS
+**Aula_OS.py**
 - O __módulo os__ em Python fornece uma interface para interagir com o sistema operacional. Ele fornece funções e variáveis para manipular arquivos, diretórios, processos, e outros recursos do sistema operacional.
 ---
 

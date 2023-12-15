@@ -75,7 +75,7 @@ print('ACRESCENTAR ELEMENTOS NO FINAL DE UMA LISTA')
 lista.append(6) # adiciona na ultima posição
 print(lista)
 print('INSERIR ELEMENTOS EM UMA LISTA NA POSIÇÃO DESEJADA "lista.insert(POSIÇÃO, VALOR)"')
-lista.insert(2, "x") # (posição, elemento)
+lista.insert(3, "x") # (posição, elemento)
 print(lista)
 
 # --------------------------------------------------------------
