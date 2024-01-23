@@ -42,7 +42,7 @@ caminho_arquivo = 'aula.txt'
     arquivo.close() # fechar
 '''
 # escrever arquivo
-with open(caminho_arquivo, 'w+') as arquivo: # with (abre e fecha)
+with open(caminho_arquivo, 'w+', encoding='utf8') as arquivo: # with (abre e fecha)
     arquivo.write('linha1\n') # escrever no arquivo
     arquivo.write('linha2\n') # escrever no arquivo
     arquivo.writelines(
@@ -54,7 +54,7 @@ with open(caminho_arquivo, 'w+') as arquivo: # with (abre e fecha)
 #-----------------------------------------------------------------------------------------------
 
 # escrever no final do arquivo
-with open(caminho_arquivo, 'a') as arquivo: # with (abre e fecha)
+with open(caminho_arquivo, 'a', encoding='utf8') as arquivo: # with (abre e fecha)
     arquivo.writelines(
         ('linha6\n', 'linha7\n', 'linha8\n')
     )
@@ -68,7 +68,7 @@ with open(caminho_arquivo, 'a') as arquivo: # with (abre e fecha)
 #-----------------------------------------------------------------------------------------------
 
 # ler arquivo
-with open(caminho_arquivo, 'r') as arquivo: # with (abre e fecha)
+with open(caminho_arquivo, 'r', encoding='utf8') as arquivo: # with (abre e fecha)
     print(arquivo.read()) # ler o arquivo
     print(arquivo.seek(0,0)) # cursor posição inicial 
     print('Ler linha')

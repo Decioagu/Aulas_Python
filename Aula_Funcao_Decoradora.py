@@ -14,18 +14,20 @@ Funções decoradoras:
 
 '''
 #---------------------------------------------------------------------
-def depurar(func): # --- 2.2
-  def interno(*args, **kwargs): # --- 3.2
-    print(f"Chamada para {func.__name__=} com argumentos: {args=}, {kwargs=}") # --- 4
-    return func(*args, **kwargs) 
-  return interno # --- 3.1
+# Resumo e funcionamento...
+def log_function(func): # 2 => func = minha_funcao(nome_1)
+    print('1º = etapa')
+    def wrapper(nome_2): # 3 => (nome_2 = nome_1)
+        print("2º = Chamada da função:", func.__name__) # 3.1
+        print('3º = Parâmetro: ', nome_2) # 3.2
+        return func(nome_2) # 3.3 => func = minha_funcao | nome_2 = nome_1
+    return wrapper # 2.1
 
-@depurar # --- 2.1
-def sandacao(name):
-  print(f'{sandacao.__name__=}')
-  return f"Olá, {name}!"
+@log_function # 1 => def minha_funcao(nome_1):
+def minha_funcao(nome_1): # 4
+    print(f"4º = Olá, {nome_1}!") # 4.1 => FIM!!!
 
-print(sandacao("Alice")) # --- 1
+minha_funcao('Décio') # 0 => INICIO...
 
 #---------------------------------------------------------------------
 '''

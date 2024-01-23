@@ -79,7 +79,7 @@ print('===================================================================')
 # diferença entre json.dump() e json.dumps()
 '''
     json.dump() e json.dumps() são duas funções do módulo json em Python que são usadas para 
-    serializar dados Python em formato JSON. A principal diferença entre as duas funções é 
+    transformar objetos Python em formato JSON. A principal diferença entre as duas funções é 
     que json.dump() serializa os dados para um arquivo, enquanto json.dumps() serializa os 
     dados para uma string.
 '''
@@ -111,7 +111,7 @@ print(json_str)
 
 # diferença entre json.load() e json.loads() 
 '''
-    Os métodos json.load() e json.loads() são usados para deserializar dados JSON em Python. 
+    Os métodos json.load() e json.loads() são usados para ler dados JSON em objetos Python. 
     A diferença entre os dois métodos é que json.load() aceita um objeto de arquivo como entrada, 
     enquanto json.loads() aceita uma string como entrada.
 '''

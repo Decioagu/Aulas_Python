@@ -42,9 +42,9 @@ readerPDF = PdfReader(RELATORIO_BACEN) # ler arquivo em PDF
 
 print(len(readerPDF.pages)) # quantidde de paginas
 
-# for page in readerPDF.pages:
-#     print(page) # ler paginas
-#     print('<==================================================>')
+for page in readerPDF.pages:
+    print(page) # ler paginas
+    print('<==================================================>')
 
 page0 = readerPDF.pages[0] # ler pagina [0]
 page1 = readerPDF.pages[1] # ler pagina [1]

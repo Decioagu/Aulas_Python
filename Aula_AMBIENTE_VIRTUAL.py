@@ -8,7 +8,11 @@
 
 *********************** Windows PowerShell**************************
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Opção: S
+# https://www.youtube.com/watch?v=m1TYpvIYm74&t=326s
 ********************************************************************
+
+# O Debugger do VS Code = Aula 36
 
 # ambiente virtual
 py -m venv venv
@@ -42,12 +46,15 @@ pip --version
 pip freeze
 
 # gerar arquivo.txt de pacotes instalados
-pip freeze > requirements.txt (OBS: nome requirements.txt pode ser alterado)
+py -m pip freeze > requirements.txt (OBS: nome requirements.txt pode ser alterado)
+pip freeze > requirements.txt
 
 # recuperar pacotes em pip freeze em arquivo.txt
-pip install -r .\requirements.txt (OBS: nome requirements.txt pode ser diferente)
+py -m pip install -r requirements.txt (OBS: nome requirements.txt pode ser diferente)
+pip install -r requirements.txt
 
 # ver versão do pacote
+pip show "pacote"
 pip index versions "pacote"
 
 # instalar versão pacote antigo código
@@ -56,11 +63,23 @@ pip install "pacote"=="código"
 # instalar versão mais recente
 pip install "pacote" --upgrade
 
-
 # instalar jupyter notebook
 py -m pip install notebook
+
 # ativar jupyter notebook
 jupyter notebook
+
+# arquivo ".gitignore" (consultar arquivo "gitignore_padrão.txt")
+Abra o VS Code e navegue até o diretório do seu projeto.
+Crie um novo arquivo chamado .gitignore.
+Abra o arquivo .gitignore recém-criado.
+
+Adicione os arquivos ou diretórios que você deseja excluir, exemplo:
+consultar arquivo "gitignore_padrão.txt", na pasta P:\REPOSITORIO\PRIVADO\Aulas_Python
+
+# PyInstaller Manual = Aula374
+pip install -U pyinstaller
+https://pyinstaller.org/en/stable/
 '''
 
 

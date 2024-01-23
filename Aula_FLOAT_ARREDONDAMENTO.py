@@ -51,7 +51,10 @@ deve ser retornado. O tipo do argumento pode ser qualquer tipo numérico,
 incluindo números inteiros, números de ponto flutuante e números complexos.
 '''
 
+print(-1)
 print(abs(-1))
+
+print(1 + 2j)
 print(abs(1 + 2j))
 
 print('===================================')
