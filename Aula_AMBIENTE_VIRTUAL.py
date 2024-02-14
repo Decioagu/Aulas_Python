@@ -12,8 +12,10 @@ Opção: S
 # https://www.youtube.com/watch?v=m1TYpvIYm74&t=326s
 ********************************************************************
 
+================================= Debugger =====================================
 # O Debugger do VS Code = Aula 36
 
+============================== ambiente virtual ================================
 # ambiente virtual
 py -m venv venv
 py -m venv "NOME"
@@ -27,20 +29,31 @@ python 3 -m venv "NOME"
 # desativar um ambiente virtual
 deactivate
 
-# atualizar pip
-python.exe -m pip install --upgrade pip
-
-# instalar pacote
-py -m pip install "pacote"
-pip install "pacote"
-
-# desintalar pacote 
-pip uninstall  "pacote"
-
 # versão python
 py -V
 python -V
 pip --version
+
+# atualizar pip
+python.exe -m pip install --upgrade pip
+
+=================================== pacote =====================================
+# instalar pacote
+py -m pip install "pacote"
+pip install "pacote"
+
+# desinstalar pacote 
+pip uninstall  "pacote"
+
+# instalar versão pacote antigo código
+pip install "pacote"=="código"
+
+# instalar versão mais recente do pacote
+pip install "pacote" --upgrade
+
+# ver versão do pacote
+pip show "pacote"
+pip index versions "pacote"
 
 # ver pacotes instalados no ambiente virtual
 pip freeze
@@ -53,22 +66,7 @@ pip freeze > requirements.txt
 py -m pip install -r requirements.txt (OBS: nome requirements.txt pode ser diferente)
 pip install -r requirements.txt
 
-# ver versão do pacote
-pip show "pacote"
-pip index versions "pacote"
-
-# instalar versão pacote antigo código
-pip install "pacote"=="código"
-
-# instalar versão mais recente
-pip install "pacote" --upgrade
-
-# instalar jupyter notebook
-py -m pip install notebook
-
-# ativar jupyter notebook
-jupyter notebook
-
+================================== gitignore =====================================
 # arquivo ".gitignore" (consultar arquivo "gitignore_padrão.txt")
 Abra o VS Code e navegue até o diretório do seu projeto.
 Crie um novo arquivo chamado .gitignore.
@@ -80,6 +78,13 @@ consultar arquivo "gitignore_padrão.txt", na pasta P:\REPOSITORIO\PRIVADO\Aulas
 # PyInstaller Manual = Aula374
 pip install -U pyinstaller
 https://pyinstaller.org/en/stable/
+
+============================= pacote jupyter notebook ============================
+# instalar jupyter notebook
+py -m pip install notebook
+
+# ativar jupyter notebook
+jupyter notebook
 '''
 
 

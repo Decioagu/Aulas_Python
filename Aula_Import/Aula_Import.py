@@ -74,3 +74,8 @@ print()
 print(produtos, sep='\n') # desempacotar lista
 print()
 pprint.pprint(produtos) # desempacotar lista
+#-----------------------------------------------------------------------------------------------
+
+from teste import titulo
+
+titulo('Décio Santana de Aguiar'.upper())

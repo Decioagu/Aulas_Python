@@ -55,7 +55,7 @@ nova_pasta.mkdir(exist_ok=True) # exist_ok=True para não da erro se existir pas
 
 # criar pasta outra_pasta
 outra_pasta = Path() / 'nova_pasta' / 'outra_pasta'
-outra_pasta.mkdir(exist_ok=True)
+outra_pasta.mkdir(exist_ok=True) # exist_ok=True para não da erro se existir pasta
 # shutil.rmtree(nova_pasta) # apagar pasta
 #-----------------------------------------------------------------------------------------------
 

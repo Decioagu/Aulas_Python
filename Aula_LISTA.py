@@ -622,3 +622,41 @@ print_iter(produtos)
 print_iter(novos_produtos)
 
 # --------------------------------------------------------
+
+# eliminar ultimo digito de um objeto dentro de uma lista
+
+matricula = ['07/08/000.327/2023.']
+
+# ELIMINAR ELEMENTO =============================
+matricula_string = str(*matricula)
+variavel_auxiliar = ''
+matricula.clear()
+for n, i in enumerate(matricula_string):
+
+    if n == len(matricula_string)-1:
+        break
+    else:
+        variavel_auxiliar += i
+matricula.append(variavel_auxiliar)
+variavel_auxiliar = ''
+# ELIMINAR ELEMENTO =============================
+print(matricula)
+
+# --------------------------------------------------------
+
+# eliminar espaço de um objeto dentro de uma lista
+
+matricula = ['15 / 171 . 341 - 1']
+# ELIMINAR ESPAÇO =============================
+matricula_string = str(*matricula)
+variavel_auxiliar = ''
+matricula.clear()
+for i in matricula_string:
+    if i == ' ':
+        ...
+    else:
+        variavel_auxiliar += i
+matricula.append(variavel_auxiliar)
+variavel_auxiliar = ''
+# ELIMINAR ESPAÇO =============================
+print(matricula)

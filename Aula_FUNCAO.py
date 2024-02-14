@@ -212,7 +212,7 @@ help(notas)
 #-----------------------------------------------------------------------------------------------
 
 # formatação de texto
-def titulo(txt):
+def titulo_01(txt):
     """
     Formata texto em um padrão em caixa
 
@@ -222,7 +222,7 @@ def titulo(txt):
     print(f'=' * (len(txt) + 4))
     print(f'= {txt} =')
     print(f'=' * (len(txt) + 4))
-titulo('Décio Santana de Aguiar'.upper())
+titulo_01('Décio Santana de Aguiar'.upper())
 #-----------------------------------------------------------------------------------------------
 
 # função para opções

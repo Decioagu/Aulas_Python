@@ -159,8 +159,12 @@ Exemplo: __"variável" = list(map(função, iterável))__
 - O __módulo openpyxl__ é uma biblioteca open-source escrita em Python utilizada para ler, escrever e manipular arquivos do __Microsoft Excel__. Ela oferece uma forma fácil e eficiente de automatizar tarefas relacionadas a planilhas.
 ---
 
-**Aula_Arquivo_PDF.py**
+**Aula_Arquivo_PDF_1.py**
 - O __módulo PyPDF2__ é uma biblioteca Python que permite manipular __arquivos PDF__ para __leitura e escrita__.
+---
+
+**Aula_Arquivo_PDF_2.py**
+- O __módulo PyMuPDF__ é uma biblioteca Python que permite manipular __arquivos PDF__ para __leitura e escrita__.
 ---
 
 **Aula_Arquivo_ZIP.py**

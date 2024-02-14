@@ -31,45 +31,55 @@ x = 1.5
 print(isinstance(x, (int, float)))
 
 print('REALIZA CONTAGEM DO OBJETO ESPECIFICADO (QUANTIDADE QUE APARECE)')
+frase = 'Curso em Vídeo Python'
 print('Frase a ser analisada =',frase)
 print('9 =',frase.count('o'))
 print()
 
 #REALIZA CONTAGEM DO OBJETO ESPECIFICADO, PONTO DE INICIO, FINAL (QUANTIDADE QUE APARECE)
+frase = 'Curso em Vídeo Python'
 print('8=',frase.count('o', 0, 15))
 print()
 
 #IDENTIFICA POSIÇÃO INICIAL DO OBJETO ESPECIFICADO, PONTO DE INICIO E FINAL
+frase = 'Curso em Vídeo Python'
 print('9a=',frase.find('o', 10, 15))
 print()
 
 #IDENTIFICA POSIÇÃO INICIAL DO OBJETO ESPECIFICADO, FINAL PARA O INICIO
+frase = 'Curso em Vídeo Python'
 print('9b=',frase.rfind('o'))
 print()
 
 #REALIZA CONTAGEM DO OBJETO ESPECIFICADO
+frase = 'Curso em Vídeo Python'
 print('10=',frase.count('deo'))
 print()
 
 #IDENTIFICA POSIÇÃO INICIAL DO OBJETO ESPECIFICADO
+frase = 'Curso em Vídeo Python'
 print('11=',frase.find('deo'))
 print()
 
 #IDENTIFICA POSIÇÃO INICIAL DO OBJETO ESPECIFICADO - RETORNA "-1" QUANDO NÃO ENCONTRADO
+frase = 'Curso em Vídeo Python'
 print('12=',frase.find('x'))
 print()
 
 #IDENTIFICA SE STRING =>'CURSO' ESTA CONTIDO EM FRASE - RETORNA TRUE OU FALSE
+frase = 'Curso em Vídeo Python'
 v = 'Curso' in frase
 print('13= "Curso" in frase=',v)
 print()
 
 #IDENTIFICA SE STRING =>'CURSO' ESTA CONTIDO EM FRASE - RETORNA TRUE OU FALSE
+frase = 'Curso em Vídeo Python'
 n = 'Décio' in frase
 print('14= "Décio" in frase=',n)
 print()
 
 #ALTERA A STRING 'Python' POR OUTRA 'Android' DENTRO DE UM TEXTO
+frase = 'Curso em Vídeo Python'
 frase.replace('Python','Android')
 print('15= frase=',frase.replace('Python','"Android"'))
 print('16= frase=',frase)
