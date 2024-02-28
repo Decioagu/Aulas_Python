@@ -85,6 +85,13 @@ py -m pip install notebook
 
 # ativar jupyter notebook
 jupyter notebook
+
+===================== PyInstaller converter scripts em executáveis ===============
+pip install pyinstaller
+https://www.youtube.com/watch?v=FdwSS1TlluQ
+Exemplo:
+pyinstaller --noconsole --name="NOME" --onefile NOME.py
+https://www.youtube.com/watch?v=el9nLY4ewHI
 '''
 
 

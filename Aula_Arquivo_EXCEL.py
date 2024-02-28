@@ -61,7 +61,6 @@ for i in workbook:
     print(f'Nome planinha = {i}')
 
 # Criando os cabeçalhos
-
 worksheet.cell(1, 1, 'Nome')    # (linha, coluna, valor)
 worksheet.cell(1, 2, 'Idade')   # (linha, coluna, valor)
 worksheet.cell(1, 3, 'Nota')    # (linha, coluna, valor)
