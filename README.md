@@ -11,20 +11,13 @@
 
 ___Objeto iterável___
 - Um iterável é um objeto que pode ser iterado, ou seja, que pode ser percorrido:
-
-__Listas__
-
-__Tuplas__
-
-__Strings__
-
-__Conjuntos__
-
-__Dicionários__ 
-
-__Objetos arquivo__ (txt, csv, json)
-
-__Geradores__ (uma expressão que retorna um objeto gerador)
+- __Listas__
+- __Tuplas__
+- __Strings__
+- __Conjuntos__
+- __Dicionários__ 
+- __Objetos arquivo__ (txt, csv, json)
+- __Geradores__ (uma expressão que retorna um objeto gerador)
 ---
 
 **Aula_STR.py**
