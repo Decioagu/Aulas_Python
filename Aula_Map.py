@@ -14,7 +14,7 @@ def quadrado1(x):
 num_ao_quadrado1 = list(map(quadrado1, lista_num_int))
 print(num_ao_quadrado1)
 
-#-----------------------------------------------------------------------
+print('===================================================================')
 
 lista_num_ao_quadrado2 = list(map(lambda x: x * 3, lista_num_int))
 print(lista_num_ao_quadrado2)
@@ -32,7 +32,7 @@ novas_chaves = map(str.upper, dicionario.keys())
 
 print(*novas_chaves)
 
-#-----------------------------------------------------------------------
+print('===================================================================')
 
 dicionario = {
     "a": 1,
@@ -43,3 +43,14 @@ dicionario = {
 novos_valores = map(lambda x: x ** 2, dicionario.values())
 
 print(*novos_valores)
+
+#-----------------------------------------------------------------------
+
+base_numbers = [2, 4, 6, 8, 10]
+powers = [1, 2, 3, 4, 5]
+
+numbers_powers = list(map(pow, base_numbers, powers))
+
+print(numbers_powers)
+
+#-----------------------------------------------------------------------
