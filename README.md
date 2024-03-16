@@ -6,18 +6,18 @@
 
 **Aula_Objeto.py**
 - Os __objetos__ são um conceito fundamental em Python. Eles são usados para representar coisas do mundo real, como pessoas, animais, objetos físicos ou conceitos abstratos. São __atributos__ que armazenam dados e comportamentos.
-- ___Atributos de dados___: Armazenam dados, como o nome, a idade ou a cor de um objeto.
-- ___Atributos de comportamento___: Representam os comportamentos de um objeto, como métodos ou funções.
+    - ___Atributos de dados___: Armazenam dados, como o nome, a idade ou a cor de um objeto.
+    - ___Atributos de comportamento___: Representam os comportamentos de um objeto, como métodos ou funções.
 
 ___Objeto iterável___
 - Um iterável é um objeto que pode ser iterado, ou seja, que pode ser percorrido:
-- __Listas__
-- __Tuplas__
-- __Strings__
-- __Conjuntos__
-- __Dicionários__ 
-- __Objetos arquivo__ (txt, csv, json)
-- __Geradores__ (uma expressão que retorna um objeto gerador)
+    - __Listas__
+    - __Tuplas__
+    - __Strings__
+    - __Conjuntos__
+    - __Dicionários__ 
+    - __Objetos arquivo__ (txt, csv, json)
+    - __Geradores__ (uma expressão que retorna um objeto gerador)
 ---
 
 **Aula_STR.py**
@@ -42,18 +42,18 @@ As strings em Python são __unicode__, o que significa que elas podem representa
 - Em Python, um conjunto ou __set()__ é uma coleção de __itens únicos__. 
 Os conjuntos são semelhantes às listas, mas têm algumas diferenças importantes:
 
-- ___Os conjuntos não são ordenados___: Os elementos de um conjunto não têm uma ordem definida.
-- ___Os conjuntos não permitem itens duplicados___: Cada elemento de um conjunto deve ser único.
+    - ___Os conjuntos não são ordenados___: Os elementos de um conjunto não têm uma ordem definida.
+    - ___Os conjuntos não permitem itens duplicados___: Cada elemento de um conjunto deve ser único.
 ---
 
 **Aula_DICIONARIO.py**
 - Em Python, um __dict()__ é uma estrutura de dados que permite armazenar uma coleção de dados relacionados, cada um com uma __chave__ e um __valor__. 
-- As ___chaves___: são únicas e servem para identificar os valores. 
-- Os ___valores___: podem ser de qualquer tipo, incluindo números, strings, objetos ou até mesmo outros dicionários.
+    - As ___chaves___: são únicas e servem para identificar os valores. 
+    - Os ___valores___: podem ser de qualquer tipo, incluindo números, strings, objetos ou até mesmo outros dicionários.
 ---
 
 **Aula_FLOAT_ARREDONDAMENTO.py**
-- Arredondamento de ponto flutuante
+- Arredondamento de ponto flutuante.
 - Uso de número absoluto __abs()__ recebe um único argumento, que pode ser do tipo numérico  inteiros, ponto flutuante e números complexos.
 ---
 ---
@@ -66,8 +66,8 @@ __import "module_name"__
 
 **Aula_EMPACOTAMENTO_DESEMPACOTAMENTO.py**
 - Em Python, o __empacotamento__ e o __desempacotamento__ são técnicas usadas para manipular __lista__, __tupla__ e __dicionário__.
-- ___Empacotamento___: é o processo de colocar vários valores em uma única variável. Isso pode ser feito usando o operador .
-- ___Desempacotamento___: é o processo de distribuir os valores de uma variável em várias variáveis. Isso pode ser feito usando o operador .
+    - ___Empacotamento___: é o processo de colocar vários valores em uma única variável. Isso pode ser feito usando o operador .
+    - ___Desempacotamento___: é o processo de distribuir os valores de uma variável em várias variáveis. Isso pode ser feito usando o operador .
 ---
 
 **Aula_if_elif_else.py**
@@ -77,16 +77,16 @@ __import "module_name"__
 
 **Aula_BREAK_&_CONTINUE.py**
 - Em programação, as instruções __break__ e __continue__ são usadas para controlar o fluxo de execução de um loop.
-- ___Break___: interrompe a execução do loop atual, independentemente da condição de parada.
-- ___Continue___: pula a próxima iteração do loop atual, indo para a iteração subsequente.
+    - ___Break___: interrompe a execução do loop atual, independentemente da condição de parada.
+    - ___Continue___: pula a próxima iteração do loop atual, indo para a iteração subsequente.
 ---
 
 **Aula_Try_Except_Else_Finally.py**
 - Em Python, as __exceções__ são eventos que interrompem o fluxo normal do programa. Elas podem ser causadas por uma variedade de fatores: 
-- Erros de sintaxe;
-- Erros de lógica;
-- Erros de execução 
-- Comando __raise__ usado para gerar uma exceção de um tipo personalizado.
+    - Erros de sintaxe;
+    - Erros de lógica;
+    - Erros de execução 
+    - Comando __raise__ usado para gerar uma exceção de um tipo personalizado.
 __Para tratar exceções se usa o bloco de código _"try"_ e _"except"_.__
 ---
 
@@ -117,15 +117,15 @@ Exemplo: __"variável" = list(map(função, iterável))__
 
 **Aula_Secrets.py**
 - O __módulo secrets__ em Python fornece funções para __gerar dados criptograficamente seguros__. Esses dados podem ser usados para:
-- ___Gerar chaves secretas___: são usadas para criptografar e descriptografar dados.
-- ___Gerar senhas aleatórias___: são mais seguras do que as senhas escolhidas pelo usuário.
-- ___Gerar tokens de autenticação___: são usados para garantir que um usuário está autorizado a acessar um recurso.
+    - ___Gerar chaves secretas___: são usadas para criptografar e descriptografar dados.
+    - ___Gerar senhas aleatórias___: são mais seguras do que as senhas escolhidas pelo usuário.
+    - ___Gerar tokens de autenticação___: são usados para garantir que um usuário está autorizado a acessar um recurso.
 ---
 
 **Aula_lifo_e_fifo.py**
 - Em Python, __LIFO__ (Last In First Out) e __FIFO__ (First In First Out) são dois tipos de estruturas de dados que são usadas para armazenar elementos em ordem em uma __lista__ de forma otimizada.
-- __LIFO__ é frequentemente usado para representar __pilhas de itens__, como uma pilha de pratos ou uma pilha de arquivos.
-- __FIFO__ é frequentemente usado para representar __filas de itens__, como uma fila de pessoas esperando para comprar ingressos ou uma fila de processos esperando para serem executados.
+    - __LIFO__ é frequentemente usado para representar __pilhas de itens__, como uma pilha de pratos ou uma pilha de arquivos.
+    - __FIFO__ é frequentemente usado para representar __filas de itens__, como uma fila de pessoas esperando para comprar ingressos ou uma fila de processos esperando para serem executados.
 ---
 ---
 
