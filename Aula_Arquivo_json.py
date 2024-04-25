@@ -43,7 +43,7 @@
 }
 '''
     * OBS:
-    Este arquivo JSON representa "um objeto" com as seguintes propriedades:
+    Este arquivo JSON representa "UM objeto" com as seguintes propriedades:
     # nome: O nome do objeto.
     # idade: A idade do objeto.
     # espécie: A espécie do objeto.
@@ -69,31 +69,30 @@ print('===================================================================')
 
 '''
     * OBS:
-    Este arquivo JSON representa "uma lista de objetos", cada um com as seguintes propriedades:
+    Este arquivo JSON representa "uma LISTA de objetos", cada um com as seguintes propriedades:
     # nome: O nome do produto.
     # preço: O preço do produto.
     # quantidade: A quantidade do produto.
 '''
 
 #-----------------------------------------------------------------------------
-# diferença entre json.dump() e json.dumps()
+# diferença entre json.dump() e json.dumps() | (ESCREVER)
 '''
     json.dump() e json.dumps() são duas funções do módulo json em Python que são usadas para 
     transformar objetos Python em formato JSON. A principal diferença entre as duas funções é 
     que json.dump() serializa os dados para um arquivo, enquanto json.dumps() serializa os 
     dados para uma string.
 '''
-# json.dump() (arquivo JSON)
+# json.dump() (arquivo JSON) | OBS: Arquivo "data.json" deve ser criado previamente
 import json
 
 dados = {"nome": "Fulano", "idade": 30}
 
-# dados = arquivo "data.json"
+# criar e escrever em um objeto JSON
 with open("data.json", "w") as f:
-    ver = json.dump(dados, f) # escrever
+    dados_arquivo_json = json.dump(dados, f) # escrever
 
-print(type(ver)) # <class 'NoneType'>
-print(ver)
+print(type(dados_arquivo_json)) # <class 'NoneType'>
 
 print('===================================================================')
 
@@ -102,14 +101,15 @@ import json
 
 dados = {"nome": "Fulano", "idade": 30}
 
-# dados = objeto srting "json_str"
-json_str = json.dumps(dados) # escrever com <class 'str'>
+
+json_str = json.dumps(dados) # formatação -> tipo "str" do objeto JSON
 
 print(type(json_str)) # <class 'str'>
 print(json_str)
+
 #-----------------------------------------------------------------------------
 
-# diferença entre json.load() e json.loads() 
+# diferença entre json.load() e json.loads() | (LER)
 '''
     Os métodos json.load() e json.loads() são usados para ler dados JSON em objetos Python. 
     A diferença entre os dois métodos é que json.load() aceita um objeto de arquivo como entrada, 
@@ -118,12 +118,12 @@ print(json_str)
 # json.load() (arquivo JSON)
 import json
 
-# ler arquivo JSON
+# ler arquivo objeto JSON
 with open("data.json", "r") as f:
-    dados = json.load(f) # ler arquivo para objeto 'dict'
+    ler_arquivo_json = json.load(f) # ler arquivo JSON para objeto 'dict'
 
-print(type(dados)) # <class 'dict'>
-print(dados) 
+print(type(ler_arquivo_json)) # <class 'dict'>
+print(ler_arquivo_json) 
 
 print('===================================================================')
 
@@ -138,15 +138,14 @@ json_string = """
     "adresse": "123 Main Street, Anytown, USA"
 }
 """
-
 person = json.loads(json_string) # ler string para objeto 'dict'
 
-print(type(person)) # <class 'dict'>
+print(type(person)) # tipo "dict" = objeto JSON
 print(person)
 
 #-----------------------------------------------------------------------------
 
-# uso de json.dump() e json.load() (arquivo JSON)
+# uso de json.dump() e json.load() (arquivo JSON | ESCREVER & LER)
 '''
   A função  no Python é usada para carregar um objeto JSON de um arquivo ou uma string. 
   Esta função retorna um objeto Python que representa o objeto JSON carregado.json.load()
@@ -172,24 +171,23 @@ data = {
     with open("data.json", "w", encoding='utf8') as criar_arquivo_json
 '''
 
-# escrever arquivo externo
+# criar e escrever em um objeto JSON
 with open("data.json", "w", encoding='utf8') as criar_arquivo_json:
   json.dump(data, criar_arquivo_json) # criar arquivo json 
 
-# ler arquivo externo
+# ler arquivo de objeto JSON
 with open("data.json", "r") as texto:
-  ver = json.load(texto)
+  ver = json.load(texto)  # ler arquivo JSON para objeto 'dict'
   print(f'{ver["nome"]=}')
   print(f'{ver["idade"]=}')
 #-----------------------------------------------------------------------------
 
-# uso de json.dumps() e json.loads() (string JSON)
+# uso de json.dumps() e json.loads() (leitura string JSON)
 '''
     A função json.loads() é uma função da biblioteca padrão do Python 
     que é usada para converter um objeto JSON em um objeto Python (dicionário).
 '''
 import json
-from pprint import pprint
 
 string_json = '''
                 {
@@ -202,13 +200,13 @@ string_json = '''
                 "budget": null
                 }
               '''
-filme = json.loads(string_json)
+filme = json.loads(string_json) # ler string para objeto 'dict'
+print(filme, "\nTIPO =>",type(filme)) # tipo "dict" = objeto JSON
 
-print(filme)
+print('-' * 100)
 
-exibir_joson = json.dumps(filme) # formatação -> tipo "str"
-
-print(exibir_joson)
+exibir_joson = json.dumps(filme) # formatação -> tipo "str" do objeto JSON
+print(exibir_joson, "\nTIPO =>",type(exibir_joson)) # tipo string
 
 #-----------------------------------------------------------------------------
 
@@ -226,6 +224,7 @@ class Movie(TypedDict):
     characters: list[str]
     budget: None | float
 
+# string
 string_json = '''
                     {
                     "title": "O Senhor dos Anéis: A Sociedade do Anel",
@@ -237,12 +236,12 @@ string_json = '''
                     "budget": null
                     }
               '''
-filme: Movie = json.loads(string_json) # tipagem
 
-print(filme) # tipo "dict"
+filme: Movie = json.loads(string_json) # ler string para objeto 'dict'
+print(filme, "\nTIPO =>",type(filme)) # tipo "dict" = objeto JSON
 print('-' * 100)
-print(filme['title']) # tipo "dict"
-print('-' * 100)
+print(filme['title']) # tipo "dict" = objeto JSON
+
 
 '''
   # json.dumps()
@@ -260,9 +259,9 @@ print('-' * 100)
   O argumento indent da função json.dumps() determina o nível de indentação do JSON serializado.
   Se indent for definido como um número inteiro, o JSON será indentado usando espaços ou tabulações.
 '''
-exibir_joson = json.dumps(filme, ensure_ascii=False, indent=2) # formatação -> tipo "str"
-
-print(exibir_joson)
+print('-' * 100)
+exibir_json = json.dumps(filme, ensure_ascii=False, indent=2) # formatação -> tipo "str" do objeto JSON
+print(exibir_json, "\nTIPO =>",type(exibir_json)) # string que representa o objeto JSON
 #-----------------------------------------------------------------------------
 
 # Exemplo json.dump e json.load  (arquivos JSON)
@@ -275,8 +274,8 @@ NOME_ARQUIVO = 'aula177.json'
 # exibe caminho da pasta atual
 CAMINHO_ABSOLUTO_ARQUIVO = os.path.abspath(
     os.path.join(
-        os.path.dirname(__file__), 
-        NOME_ARQUIVO
+        os.path.dirname(__file__), # caminho atual
+        NOME_ARQUIVO # nome arquivo
     )
 )
 #=====================================================
@@ -302,10 +301,10 @@ filme = {
 
 # criar e escrever em um objeto JSON
 with open(CAMINHO_ABSOLUTO_ARQUIVO, 'w') as arquivo:
-    json.dump(filme, arquivo, ensure_ascii=False, indent=2)
+    json.dump(filme, arquivo, ensure_ascii=False, indent=2) # altera visualização dentro do arquivo JSON
 
 # ler arquivo objeto JSON
 with open(CAMINHO_ABSOLUTO_ARQUIVO, 'r') as arquivo:
-    filme_do_json = json.load(arquivo)
+    filme_do_json = json.load(arquivo)  # ler arquivo JSON para objeto 'dict'
     print(filme_do_json)
 #-----------------------------------------------------------------------------

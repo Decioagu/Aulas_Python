@@ -1,3 +1,69 @@
+'''
+Lista de Métodos String em Python
+O Python oferece diversos métodos para manipular strings de forma eficiente. 
+Abaixo, listo alguns dos métodos mais comuns e suas funcionalidades:
+
+1. Modificação de Case:
+# upper(): Converte todos os caracteres para maiúsculas.
+# lower(): Converte todos os caracteres para minúsculas.
+# capitalize(): Converte o primeiro caractere para maiúscula e os demais para minúsculas.
+# swapcase(): Inverte o case de cada caractere (maiúsculas para minúsculas e vice-versa).
+
+2. Busca e Substituição:
+# find(substring): Encontra a primeira ocorrência da substring dentro da string, retornando o índice da posição inicial.
+# rfind(substring): Encontra a última ocorrência da substring dentro da string, retornando o índice da posição inicial.
+# index(substring): Similar ao find(), mas gera uma exceção se a substring não for encontrada.
+# rindex(substring): Similar ao rfind(), mas gera uma exceção se a substring não for encontrada.
+# count(substring): Conta o número de ocorrências da substring dentro da string.
+# replace(old, new): Substitui todas as ocorrências de old por new na string.
+
+3. Remoção e Adição:
+# strip(): Remove espaços em branco no início e no final da string.
+# lstrip(): Remove espaços em branco no início da string.
+# rstrip(): Remove espaços em branco no final da string.
+# center(width, fillchar): Centraliza a string dentro de um campo de largura especificada, usando o caractere de preenchimento fillchar.
+# zfill(width): Adiciona zeros à esquerda da string até atingir a largura especificada.
+# ljust(width, fillchar): Justifica a string à esquerda dentro de um campo de largura especificada, usando o caractere de preenchimento fillchar.
+# rjust(width, fillchar): Justifica a string à direita dentro de um campo de largura especificada, usando o caractere de preenchimento fillchar.
+
+4. Formatação:
+# # format(*args, **kwargs): Formata a string usanisspacedo formatação de estilo antigo (similar ao C).
+# # f-strings: Formata a string usando formatação de string f-string (mais recente e poderosa).
+
+5. Métodos de Validação:
+# endswith(): Verifica se a string termina com um substring específico.
+# startswith(): Verifica se a string começa com um substring específico.
+# isupper(): Verifica se todos os caracteres são maiúsculas.
+# islower(): Verifica se todos os caracteres são minúsculas.
+# isalnum(): Verifica se todos os caracteres são alfanuméricos (letras e números).
+# isdecimal(): Verifica se todos os caracteres são decimais (0 a 9).
+# isspace(): Verifica se todos os caracteres são espaços em branco.
+# islower(): Verifica se todos os caracteres da string são minúsculas.
+# istitle(): Verifica se a string está formatada como título (primeira letra de cada palavra em maiúscula).
+# isnumeric(): Verifica se a string contém apenas dígitos decimais (0 a 9).
+# isalpha(): Verifica se a string contém apenas letras (A a Z e a a z).
+# isalnum(): Verifica se a string contém apenas letras e dígitos decimais.
+# isspace(): Verifica se a string contém apenas espaços em branco.
+# isdigit(): Verifica se todos os caracteres da string são dígitos (incluindo subscritos e sobrescritos).
+# match(): Usa expressões regulares para verificar se a string corresponde a um padrão específico.
+# search(): Usa expressões regulares para encontrar a primeira ocorrência de um padrão na string.
+
+6. Junção e Divisão:
+# join(iterable): Junta uma sequência de strings em uma única string, usando o separador especificado no objeto iterável.
+# split(sep, maxsplit): Divide a string em uma lista de substrings, usando o separador especificado por sep e limitando o número de divisões por maxsplit.
+
+7. Conversão:
+# encode(encoding): Converte a string para uma sequência de bytes usando a codificação especificada por encoding.
+# decode(encoding): Converte uma sequência de bytes em uma string usando a codificação especificada por encoding.
+
+8. Outros Métodos Úteis:
+# len(): Retorna o tamanho da string (número de caracteres).
+# startswith(prefix): Verifica se a string começa com a substring prefixa.
+# endswith(suffix): Verifica se a string termina com a substring sufixa.
+# istitle(): Verifica se a string está formatada como título (primeira letra de cada palavra maiúscula).
+# splitlines(): Divide a string em uma lista de linhas, com base nas quebras de linha.
+'''
+
 # FIM DA TABELA DE CORES
 print()
 print('= FATIAMENTO DE FRASE =')
