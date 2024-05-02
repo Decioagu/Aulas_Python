@@ -111,7 +111,16 @@ contador(0, 2)
 contador(0)
 contador()
 #-----------------------------------------------------------------------------------------------
+'''
+*args (argumentos posicionais)
+Usado para capturar um número arbitrário de argumentos posicionais 
+(argumentos passados sem nomes) em uma tupla dentro de uma definição de função.
+Ao chamar a função, você pode passar qualquer número de argumentos, 
+que serão coletados na tupla.
 
+def funcao(*args):
+    ...
+'''
 # exemplo (DESEMPACOTAMENTO - lista, tupla)
 def valor(*n, div=1):
     resultado = sum(n)/div
@@ -119,7 +128,16 @@ def valor(*n, div=1):
 
 print(valor(8,10, div=2))
 #-----------------------------------------------------------------------------------------------
+'''
+**kwargs (argumentos de palavra-chave)
+Usado para capturar um número arbitrário de argumentos de palavra-chave 
+(argumentos passados com nomes) em um dicionário dentro de uma definição de função.
+Ao chamar a função, você pode passar qualquer número de argumentos de palavra-chave, 
+que serão coletados no dicionário.
 
+def funcao(**kwargs):
+    ...
+'''
 # exemplo (DESEMPACOTAMENTO - dicionario)
 def piscina(prof, **infos):
     vol = prof * infos['largura'] * infos['comprimento']
@@ -128,6 +146,16 @@ def piscina(prof, **infos):
 volume = piscina(5, largura=4, comprimento=5)
 
 print('O volume é: ', volume)
+#-----------------------------------------------------------------------------------------------
+'''
+"*args" é para argumentos posicionais.
+"**kwargs" é para argumentos de palavra-chave.
+'''
+def funcao(*args, **kwargs):
+    print(f'args: {args}')
+    print(f'kwargs: {kwargs}')
+
+funcao(3, 'DSA', nome='Ana',  idade=21)
 #-----------------------------------------------------------------------------------------------
 
 # função com valor global
@@ -177,7 +205,7 @@ print(range_em_lista(5))
 #-----------------------------------------------------------------------------------------------
 
 # função média de aluno
-def notas(* num, sit=False):
+def notas(*num, sit=False):
     """
     A função notas calcula a média do aluno independente de quantas notas
     forem adicionado a média e possui o opcional da situação do aluno
@@ -320,8 +348,48 @@ valor = float(input(f'Digite o preço: R$'))
 valor = moeda(valor)
 print(f'Moeda = {valor}')
 print(f'{type(valor)}')
+#-----------------------------------------------------------------------------------------------
 
+'''
+O módulo "functools" em Python é um tesouro de funções utilitárias projetadas 
+para trabalhar e manipular outras funções em seu código.
 
+Principais características do functools:
+Essa função é um salva-vidas quando você deseja criar uma nova função 
+preenchendo previamente alguns dos argumentos de uma função existente. Isso é 
+particularmente útil para a construção de objetos de função personalizados que 
+podem ser passados ou usados em decoradores.
+'''
 
+import functools
 
+def somar(x, y):
+  """
+  Função que soma dois números.
+  """
+  return x + y
 
+# Criando uma nova função "somar_10" que soma 10 a qualquer número.
+somar_10 = functools.partial(somar, y=10)
+
+# Usando a função "somar_10".
+resultado = somar_10(5)
+print(resultado)  # Resultado: 15
+
+print('<========================>')
+
+import functools
+
+def meu_decorador(funcao):
+    @functools.wraps(funcao) # modificar o comportamento de outras funções (empacota)
+    def funcao_que_roda_funcao():
+        print('inicio "funcao_que_roda_funcao"')
+        funcao()
+        print('termino "funcao_que_roda_funcao"')
+    return funcao_que_roda_funcao
+
+@meu_decorador # função empacotada
+def minha_função():
+    print('minha_função')
+
+minha_função()

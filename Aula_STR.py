@@ -38,7 +38,6 @@ Abaixo, listo alguns dos métodos mais comuns e suas funcionalidades:
 # isalnum(): Verifica se todos os caracteres são alfanuméricos (letras e números).
 # isdecimal(): Verifica se todos os caracteres são decimais (0 a 9).
 # isspace(): Verifica se todos os caracteres são espaços em branco.
-# islower(): Verifica se todos os caracteres da string são minúsculas.
 # istitle(): Verifica se a string está formatada como título (primeira letra de cada palavra em maiúscula).
 # isnumeric(): Verifica se a string contém apenas dígitos decimais (0 a 9).
 # isalpha(): Verifica se a string contém apenas letras (A a Z e a a z).

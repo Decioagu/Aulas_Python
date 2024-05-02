@@ -22,13 +22,19 @@ print(re.sub(r'teste', 'ABCD', texto)) # OBS: r'string' = interpretada como uma 
 '''
 "re.compile()" compilar uma expressão regular em um objeto, 
 que pode ser usado para realizar operações de correspondência como:
-# re.match(); # re.search(); # re.findall(); # re.sub();
+    # re.match(); # re.search(); # re.findall(); # re.sub();
 '''
 complete = re.compile(r'teste')
+print("<==========>")
 print(complete.search(texto))
+print(re.search(complete,texto))
+print("<==========>")
 print(complete.findall(texto))
+print(re.findall(complete,texto))
+print("<==========>")
 print(complete.sub('DEF', texto))
-
+print(re.sub(complete, 'DEF',texto))
+print("<==========>")
 '''
 re.match(r'palavra', texto, flaags=0)
 re.search('palavra', texto, flags=0)
@@ -36,8 +42,8 @@ re.findall('palavra', texto, flags=0)
 re.sub(r'palavra', 'substituto', texto, flags=0)
 
 Onde:
-# pattern é a expressão regular a ser pesquisada.
-# string é a string na qual a expressão regular será pesquisada.
+# pattern (palavra) é a expressão regular a ser pesquisada.
+# string (texto) é a string na qual a expressão regular será pesquisada.
 # flags é um valor opcional que pode ser usado para modificar o comportamento da pesquisa.
 
 Valores possíveis para flags são:
@@ -613,7 +619,7 @@ import re
 
 ip_reg_exp = re.compile(
     r'^'  # Começa com
-    r'(?:'
+    r'(?:' # (?:) = não captura
     r'(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])\.'
     r'){3}'  # Sequência de 3 digitos e um ponto repete 3x
     r'(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])'

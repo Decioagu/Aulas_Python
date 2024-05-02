@@ -23,6 +23,24 @@
     # Polimorfismo: O polimorfismo é a capacidade de um objeto se comportar de 
         diferentes maneiras, dependendo do contexto em que é utilizado.
 '''
+class Nome:
+    def __init__(self): # iniciar classe (construtor)_0
+        self.nome = 'Décio'
+
+pessoa_01 = Nome() # adicionar dados (atributo)
+pessoa_02 = Nome() # adicionar dados (atributo)
+
+print(f'Class: {pessoa_01.nome}') # acessar dados (atributo)
+print(f'Class: {pessoa_02.nome}') # acessar dados (atributo)
+print(f'Class: {pessoa_01 == pessoa_02}') # Class: False
+
+pessoa_03 = 'Décio'
+pessoa_04 = 'Décio'
+print(f'Objeto: {pessoa_03}')
+print(f'Objeto: {pessoa_04}')
+print(f'Objeto: {pessoa_03 == pessoa_04}') # Objeto: True
+
+#-----------------------------------------------------------------------------------------------
 
 class Pessoa:
     def __init__(self, nome, idade): # iniciar classe (construtor)
@@ -42,13 +60,15 @@ pessoa2 = Pessoa("Maria", 17) # adicionar dados (atributo)
 print(f'{pessoa1.nome}:') # acessar dados (atributo)
 pessoa1.falar() # acessar método (ação)
 Pessoa.falar(pessoa1) # acessar método (ação)
-print(pessoa1.maior_de_idade())
+print(pessoa1.maior_de_idade()) # acessar método (ação)
+print(Pessoa.maior_de_idade(pessoa1)) # acessar método (ação)
 
-print()
+print('<======>')
 print(f'{pessoa2.nome}:') # acessar dados (atributo)
 pessoa2.falar() # acessar método (ação)
 Pessoa.falar(pessoa2) # acessar método (ação)
-print(pessoa2.maior_de_idade())
+print(pessoa2.maior_de_idade()) # acessar método (ação)
+print(Pessoa.maior_de_idade(pessoa2)) # acessar método (ação)
 
 #-----------------------------------------------------------------------------------------------
 # Mantendo estados dentro da classe
@@ -134,11 +154,39 @@ print(f'{novo_dicionario=}')
 #-----------------------------------------------------------------------------------------------
 # Métodos de classe (DECORADOR)
 '''
+    Em Python, é um decorador que é usado para definir um método dentro de uma 
+    classe que opera no nível de classe em vez do nível de objeto (instância). 
+    Isso significa que o método pode acessar e modificar atributos de classe e 
+    pode ser chamado diretamente usando o nome da classe ou em um objeto da classe.
+    # @classmethod
+
     # Métodos de classe + factories (fábricas)
     # São métodos onde "self" será "cls", ou seja,
     # ao invés de receber a instância no primeiro
     # parâmetro, receberemos a própria classe.
 '''
+
+class Numero:
+    valor = 5  # atributo de classe
+
+    def __init__(self, num):
+        self.num = num
+
+    def metodo(self): # método (ação)
+        print(self.num * self.valor)
+
+    @classmethod # método de classe
+    def metodo_de_classe(cls, novo_num): # receberemos a própria class
+        cls.valor = novo_num
+
+p1 = Numero(10)
+p1.metodo()
+Numero.metodo_de_classe(10)
+p1.metodo() # autera atributo de classe
+p2 = Numero(10)
+p2.metodo()
+
+print('<==========================================================>')
 
 class Pessoa:
     ano = 2023  # atributo de classe
@@ -179,6 +227,11 @@ print(p4.nome, p4.idade)
 #-----------------------------------------------------------------------------------------------
 # aulas 209 e 210 (DECORADOR)
 '''
+    Em Python, é um decorador que é usado para definir um método estático dentro de uma 
+    classe. Um método estático se comporta como uma função regular, mas está associado 
+    a uma classe. Aqui estão as principais características dos métodos estáticos.
+    # @staticmethod
+
     # método vs @classmethod vs @staticmethod
     # método - self, método de instância
     # @classmethod - cls, método de classe
@@ -247,8 +300,9 @@ print(Connection.log('Essa é a mensagem de log'))
     # - p/ executar ações ao obter um atributo
     # Código cliente - é o código que usa seu código
 
-    Em Python, uma @property é um decorador que transforma um método em uma propriedade de uma classe. 
-    Isso permite que o método seja acessado como um atributo, sem a necessidade de chamá-lo como uma função.
+    Em Python, uma @property é um decorador que transforma um método em uma 
+    propriedade de uma classe. Isso permite que o método seja acessado como 
+    um atributo, sem a necessidade de chamá-lo como uma função.
 '''
 
 class Caneta:
@@ -302,6 +356,14 @@ print(caneta.get_cor())
     # - p/ executar ações ao obter um atributo
     # Atributos que começar com um ou dois underlines
     # não devem ser usados fora da classe.
+
+    Embora o Python não tenha decoradores @setter integrados, ele fornece uma 
+    abordagem mais Pythonic para controlar o acesso e a validação de atributos 
+    usando propriedades.
+    Propriedades:
+    As propriedades permitem definir um getter (para recuperar valores de atributo) 
+    e um setter opcional (para modificar valores de atributo) com o decorador. Aqui 
+    está a estrutura básica:@property.setter
 '''
 class Caneta:
     def __init__(self):
