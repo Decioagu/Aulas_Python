@@ -287,8 +287,8 @@ print(tempo_de_emprestimo, type(tempo_de_emprestimo))
 print(fim_emprestimo, type(fim_emprestimo))
 #-----------------------------------------------------------------------------------------------
 
-# calcular idade  (DINÂMICO)
-
+# calcular idade  (DINÂMICO)  
+# Este comando irá baixar e instalar a biblioteca dateutil e suas dependências (pip install python-dateutil)
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 

@@ -29,7 +29,7 @@
 '''
 
 #-----------------------------------------------------------------------------
-# Exemplo OBJETO em JSON:
+# Exemplo OBJETO em JSON (instância):
 # JSON - OBS: utilizar aspas duplas
 {
   "nome": "Bard",
@@ -52,7 +52,7 @@
 '''
 print('===================================================================')
 
-# Exemplo LISTA DE OBJETOS em JSON:
+# Exemplo LISTA DE OBJETOS em JSON (coleção):
 # JSON - OBS: utilizar aspas duplas
 [
   {
