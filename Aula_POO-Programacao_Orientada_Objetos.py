@@ -1553,3 +1553,60 @@ if __name__ == '__main__':
     print('Ana' in lista) # def __next__(self)
     print("Décio" in lista) # def __next__(self)
     print('-' * 45)
+
+#-----------------------------------------------------------------------------------------------
+
+class Pessoa:
+
+    def __init__(self): # construtor
+        self.nome = None
+        self.idade = None
+
+    def set_dados(self): # método
+        print('Cadastramento:')
+        self.nome = input('Digite seu nome: ')
+        self.idade = input('Digite seu idade: ')
+
+    def get_dados(self): # método
+        print('Cadastro:')
+        print(f'Nome: {self.nome}, Idade{self.idade}')
+
+def main():
+    loop = True # finaliza loop se False e permanece se True
+    LISTA = []
+
+    while loop:
+        # menu de operações existentes => "menu de opções"
+        menu =  '''
+============================================================
+                    Menu de opções:
+                    [1] CADASTRAR
+                    [2] EXIBIR
+                    [3] FINALIZAR
+                '''
+        # exibir "menu de opções"
+        print(menu)
+
+         # entrada de parâmetro digitada pelo usuário
+        opcao = input('Escolha uma opção:').lower()
+        print('=' * 60)
+
+        # "menu de opções" = CADASTRO
+        if opcao == '1':
+            nome = Pessoa()
+            nome.set_dados()
+            LISTA.append(nome)
+        # "menu de opções" = EXIBIR
+        elif opcao == '2':
+            for i in LISTA:
+                i.get_dados()
+        # "menu de opções" = FINALIZAR
+        elif opcao == '3':
+            loop = False
+        else:
+            # caso usuário digite qualquer opção não existente no "Menu de opções" 
+            print('Opção invalida, digite o NUMERO correspondente ao "Menu de opções:"')
+
+main()
+
+#-----------------------------------------------------------------------------------------------

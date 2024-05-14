@@ -1,3 +1,46 @@
+def meu_decorador(funcao): # 2º
+    def envelope():
+        print('Executa ANTES da função!')
+        funcao() # 3.1º
+        print('Executa DEPOIS da função!')
+    return envelope
+
+def minha_funcao(): # 3.2º
+    print('Executar função...')
+
+minha_funcao = meu_decorador(minha_funcao) # decorador
+minha_funcao() # 1º
+
+#---------------------------------------------------------------------
+
+def meu_decorador(funcao): # 2º
+    def envelope():
+        print('Executa ANTES da função!')
+        funcao() # 3.1º
+        print('Executa DEPOIS da função!')
+    return envelope
+
+@ meu_decorador # decorador
+def minha_funcao(): # 3.2º
+    print('Executar função...')
+
+minha_funcao() # 1º
+
+#---------------------------------------------------------------------
+
+def meu_decorador(funcao): # 2º
+    def envelope(*args, **kwargs):
+        print('Executa ANTES da função!')
+        funcao(*args, **kwargs) # 3.1º
+        print('Executa DEPOIS da função!')
+    return envelope
+
+@ meu_decorador # decorador
+def minha_funcao(x): # 3.2º
+    print(f'Executando {x} função...')
+
+minha_funcao('minha') # 1º
+
 '''
 Funções decoradoras:
     Em Python, uma função decoradora é uma função que recebe outra função como entrada e retorna uma função modificada. 
@@ -88,3 +131,90 @@ def soma(x, y):
 
 dez_mais_cinco = soma(10, 5)
 print(dez_mais_cinco)
+
+#------------------------------------------------------------------------------
+# introspecção
+'''
+O módulo functools do Python fornece ferramentas úteis para trabalhar com funções 
+e objetos chamáveis. Ele oferece diversas funcionalidades para simplificar e otimizar 
+seu código, como:
+
+Criar novas funções a partir de funções existentes:
+    # partial: permite criar uma nova função a partir de uma função original, 
+    pré-definindo alguns argumentos e valores-chave. Isso facilita a reutilização 
+    de funções e a criação de funções personalizadas com base em comportamentos existentes.
+    # update_wrapper: atualiza o metadados de uma função, como nome, docstring e atributos, 
+    para refletir a nova função criada a partir da original.
+
+Trabalhar com sequências:
+    # reduce: aplica uma função a dois argumentos cumulativamente aos elementos de 
+    uma sequência, reduzindo-a a um único valor. Isso é útil para operações como soma, 
+    multiplicação e concatenação.
+    # lru_cache: cria um cache de memória para armazenar os resultados de uma função, 
+    otimizando seu desempenho para chamadas frequentes com os mesmos argumentos.
+Melhorar a organização do código:
+
+    # wraps: decora uma função para que ela mantenha o metadados da função original, 
+    como nome, docstring e atributos. Isso facilita a leitura e compreensão do código.
+    # total_ordering: decora uma classe para fornecer métodos de comparação ricos, 
+    simplificando a implementação de comparações entre objetos da classe.
+
+Outras funcionalidades:
+    # partialmethod: converte um método de instância em uma função que pode ser usada 
+    sem uma instância específica.
+    # singledispatch: implementa despacho único para funções, permitindo escolher 
+    qual função implementar com base no tipo do primeiro argumento.
+'''
+
+
+from functools import wraps
+'''
+wraps: decora uma função para que ela mantenha o metadados da função original, 
+como nome, docstring e atributos. Isso facilita a leitura e compreensão do código.
+'''
+def meu_decorador(funcao): # 2º
+    @wraps(funcao)
+    def envelope(*args, **kwargs):
+        print('Executa ANTES da função!')
+        funcao(*args, **kwargs) # 3.1º
+        print('Executa DEPOIS da função!')
+    return envelope
+
+@ meu_decorador # decorador
+def minha_funcao(x): # 3.2º
+    print(f'Executando {x} função...')
+
+minha_funcao('minha') # 1º
+
+print(minha_funcao.__name__)
+
+#------------------------------------------------------------------------------
+
+from functools import partial
+'''
+partial: permite criar uma nova função a partir de uma função original, 
+pré-definindo alguns argumentos e valores-chave. Isso facilita a reutilização 
+'''
+def quadrado_mais_5(x):
+  return x * x + 5
+
+quadrado_de_10 = partial(quadrado_mais_5, 10)
+print(quadrado_de_10())  # Resultado: 125
+
+#------------------------------------------------------------------------------
+
+from functools import lru_cache
+'''
+lru_cache: cria um cache de memória para armazenar os resultados de uma função, 
+otimizando seu desempenho para chamadas frequentes com os mesmos argumentos.
+'''
+@lru_cache()
+def fatorial(n):
+  if n == 0:
+    return 1
+  else:
+    return n * fatorial(n - 1)
+
+print(fatorial(5))  # Resultado: 120
+
+#------------------------------------------------------------------------------

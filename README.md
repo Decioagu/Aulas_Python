@@ -75,6 +75,22 @@ __import "module_name"__
 - Em Python, as estruturas condicionais mais comuns são o __if__, __elif__ e __else__.
 ---
 
+**Aula_match.py**
+- Introduzido no Python 3.10, fornece uma maneira mais limpa e concisa de lidar com várias condições em comparação com as cadeias tradicionais (__if/elif/else__).
+
+dia = "Sexta"
+
+match dia:
+    case "Segunda":
+        print("Hoje é o pior dia da semana!")
+    case "Terça" | "Quarta" | "Quinta":
+        print("Segue para o proximo...")
+    case "Sexta":
+        print("Sextou...")
+    case _:
+        print("Zzzz...")
+---
+
 **Aula_BREAK_&_CONTINUE.py**
 - Em programação, as instruções __break__ e __continue__ são usadas para controlar o fluxo de execução de um loop.
     - ___Break___: interrompe a execução do loop atual, independentemente da condição de parada.
@@ -105,6 +121,15 @@ Exemplo: __"variável" = list(map(função, iterável))__
 
 **Aula_GENERATOR_EXPRESSION.py**
 - Generator expression em Python é uma expressão que retorna um objeto gerador. É semelhante a uma __compreensão de lista__, mas em vez de criar uma lista, cria um __objeto gerador__ que pode ser iterado para produzir os valores no gerador.
+---
+
+**Aula_ITERADOR.py**
+- Iterador é um objeto que permite percorrer uma coleção de elementos sequencialmente, sem expor seus detalhes internos. A função nativa iter() converte um iterável em um iterador, essa função pega um objeto iterável como argumento e retorna o seu iterador correspondente.
+
+- Diferença entre iterador e iterável:
+    - Iterável: Um objeto que pode ser passado para um loop for. Exemplos: listas, strings, conjuntos, dicionários etc.
+    - Iterador: Um objeto que retorna elementos sequencialmente através do método __next__(). 
+    - __Um iterador é sempre um iterável, mas nem todo iterável é um iterador.__
 ---
 
 **Aula_pprint.py**

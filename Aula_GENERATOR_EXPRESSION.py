@@ -29,9 +29,13 @@ import sys
 # Generator expression, Iterables e Iterators em Python
 iterable = ['Eu', 'Tenho', '__iter__']
 iterator = iter(iterable)  # tem __iter__ e __next__
+print(iterable)
+print(iterator) # não é possível acesso direto dos itens
+for x in range(5):
+    print(x)
+
 lista = [n for n in range(100)] # lista
 generator = (n for n in range(100)) # compacta range em um local na memória (economiza memória)
-
 # getsizeof() é uma função em Python retorna o tamanho de um objeto em bytes
 print(sys.getsizeof(lista))
 print(sys.getsizeof(generator))
@@ -61,9 +65,11 @@ def gerador():
 
 gerador = gerador()
 
+print(gerador) # não é possível acesso direto dos itens
 print(next(gerador))
 print(next(gerador))
 print(next(gerador))
+# print(next(gerador)) # solicitar um novo print haverá erro
 
 print('===================================================================')
 
