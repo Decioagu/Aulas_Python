@@ -18,21 +18,26 @@ print(data2, type(data2))
 
 print('<==========================================================>')
 
-data_str_data = '20/04/2023 07:49:23'
-data_str_fmt = '%d/%m/%Y %H:%M:%S'
+data_str_data = '20/04/2023 07:49:23' # "str"
+data_str_fmt = '%d/%m/%Y %H:%M:%S' # "str"
 # data_str_data = '20/04/2023'
 # data_str_fmt = '%d/%m/%Y'
-data3 = datetime.strptime(data_str_data, data_str_fmt) # data formatada
+data3 = datetime.strptime(data_str_data, data_str_fmt) # formatar data para "datetime"
 print(data3, type(data3))
+print(data3.date(), type(data3))
+data4 = data3.strftime('%d/%m/%Y %H:%M:%S') # formatar "datetime" para "str"
+print(data4, type(data4)) # data formatada para "str"
+
 #-----------------------------------------------------------------------------------------------
 
 # separa data e hora criada (FIXO)
 from datetime import datetime
 
 dt = datetime(2019, 11, 4, 14, 53, 11)
-print("Datetime:", dt, type(dt)) # data e hora
-print("Data:", dt.date(), type(dt.date())) # data
-print("Tempo:", dt.time(), type(dt.time())) # hora
+print("Datetime:", dt, type(dt)) # Datetime: 2019-11-04 14:53:11 <class 'datetime.datetime'>
+print("Data:", dt.date(), type(dt.date())) # Data: 2019-11-04 <class 'datetime.date'>
+print("Tempo:", dt.time(), type(dt.time())) # Tempo: 14:53:11 <class 'datetime.time'>
+
 #-----------------------------------------------------------------------------------------------
 
 # criar data (FIXO)
@@ -54,14 +59,18 @@ print(data)
 #-----------------------------------------------------------------------------------------------
 
 # data de hoje (DINÂMICO)
-from datetime import date
+from datetime import date, datetime
 
-today = date.today() # data de hoje
+# datetime.now() = datetime.today()
+print(datetime.now()) # data | hora:minuto:segundo:mile segundo
+print(datetime.today()) # data | hora:minuto:segundo:mile segundo
 
-print("Data:", today) # ano/mês/dia
-print("Ano:", today.year) # ano
-print("Mês:", today.month) # mês
-print("Dia:", today.day) # dia
+hoje = date.today() # data de hoje
+
+print("Data:", hoje) # ano/mês/dia
+print("Ano:", hoje.year) # ano
+print("Mês:", hoje.month) # mês
+print("Dia:", hoje.day) # dia
 #-----------------------------------------------------------------------------------------------
 
 # Unix (DINÂMICO)
@@ -293,7 +302,6 @@ from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
 nascimento = datetime(1981, 5, 15)
-data = datetime(2023, 5, 15)
 hoje = datetime.now()
 aniversario = relativedelta(hoje, nascimento)
 print(aniversario, type(aniversario)) # tempo de vida
@@ -402,6 +410,7 @@ from pytz import timezone
 
 data = datetime.now(timezone('Japan')) # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 print(data)  # Isso está na base de dados
+
 
 # data = datetime(2022, 4, 20, 7, 49, 23, tzinfo=timezone('Asia/Tokyo'))
 # data = datetime.strptime(data_str_data, data_str_fmt)

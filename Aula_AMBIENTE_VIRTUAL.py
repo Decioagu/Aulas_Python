@@ -56,6 +56,7 @@ pip show "pacote"
 pip index versions "pacote"
 
 # ver pacotes instalados no ambiente virtual
+pip list
 pip freeze
 
 # gerar arquivo.txt de pacotes instalados

@@ -113,19 +113,19 @@ print('<==========================================================>')
 '''
 
 import os
+caminho = os.path.join('/REPOSITORIO', 'PUBLICO', 'Aulas_Python', 'Aula_OS')
 
-caminho = os.path.join('/REPOSITORIO', 'PUBLICO', 'PYTHON_UDEMY', 'Aula_os', 'exemplo')
-# caminho = os.path.join('/REPOSITORIO', 'PUBLICO', 'PYTHON_UDEMY', 'Aula_os')
-
+# lista de strings contendo os nomes dos arquivos e diretórios
 for pasta in os.listdir(caminho): 
     caminho_completo_pasta = os.path.join(caminho, pasta)
     print(pasta)
 
+    # verificar se um caminho especificado é um diretório existente ou não
     if not os.path.isdir(caminho_completo_pasta):
         continue
-
+    # lista de strings contendo os nomes dos arquivos e diretórios
     for itens in os.listdir(caminho_completo_pasta):
-        print('  ', itens)
+        print(' ',itens)
     
 print('<==========================================================>')
 
@@ -209,6 +209,7 @@ import os
 import shutil
 
 HOME = os.path.expanduser('~') # resposta => C:\Users\decio
+print(HOME)
 TESTE_PY = os.path.join(HOME, 'TESTE_PY') # unir "C:\Users\decio" com "\TESTE_PY" 
 # OBS: (pasta deve esta previamente criada)
 NOVA_PASTA = os.path.join(TESTE_PY, 'NOVA_PASTA') # já existe
@@ -228,16 +229,19 @@ os.makedirs(NOVA_PASTA_2, exist_ok=True) # cria nova pasta (caminho)
 os.makedirs(NOVA_PASTA_3, exist_ok=True) # cria nova pasta (caminho)
 os.makedirs(NOVA_PASTA_4, exist_ok=True) # cria nova pasta (caminho)
 
-''' se arquivo solicitado já existir na nova pasta ocorrerá uma erro de exceção '''
+''' OBS: se arquivo solicitado já existir na nova pasta ocorrerá uma erro de exceção '''
 
 # copia um arquivo para uma nova pasta
 shutil.copy(NOVA_PASTA + '/SUN.docx', NOVA_PASTA_1) 
 
 # copia um arquivo para uma nova pasta (também usado para alterar nomes)
-shutil.copy(NOVA_PASTA + '/SUN.docx', NOVA_PASTA_1 + '/NOVO_SUN.docx') 
+shutil.copy(NOVA_PASTA + '/SUN.docx', NOVA_PASTA_1 + '/NOVO_SUN.docx')
 
-# move o arquivo para nova pasta com novo nome
-shutil.move(NOVA_PASTA_1 + '/NOVO_SUN.docx', NOVA_PASTA_2)
+# alterar nomes
+shutil.copy(NOVA_PASTA_1 + '/NOVO_SUN.docx', NOVA_PASTA_1 + '/SUPER_SUN.docx') 
+
+# move o arquivo para nova pasta com novo nome ()
+shutil.move(NOVA_PASTA_1 + '/NOVO_SUN.docx', NOVA_PASTA_4)
 
 # move a pasta para outra pasta (também usado para alterar nomes)
 shutil.move(NOVA_PASTA_3 , NOVA_PASTA_1)

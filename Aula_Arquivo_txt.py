@@ -2,10 +2,10 @@
 # Usamos a função open para abrir
 # um arquivo em Python (ele pode ou não existir)
 # Modos:
-# r (leitura), w (escrita), x (para criação)
-# a (escreve ao final), b (binário)
-# t (modo texto), + (leitura e escrita)
-# Context manager - with (abre e fecha)
+# "r" (leitura), "w" (escrita), "x" (para criação)
+# "a" (escreve ao final), "b" (binário)
+# "t" (modo texto), "+" (leitura e escrita)
+# Context manager "-" with (abre e fecha)
 # Métodos úteis
 # write, read (escrever e ler)
 # writelines (escrever várias linhas)
@@ -27,10 +27,15 @@
 
     OBS: todo arquivo.txt aberto deve ser fechado apos seu uso para não haver erro.
 '''
-arquivo = open('aula.txt', 'w', encoding='utf8') # Abre o arquivo "myfile.txt" para leitura
+arquivo = open('aula.txt', 'w', encoding='utf8') # Abre o arquivo "aula.txt" para escrita
 arquivo.write('Bem vindo!') # Escrever texto no arquivo
 arquivo.close() # Fecha o arquivo
-
+arquivo = open('aula.txt', 'a', encoding='utf8') # Abre o arquivo "aula.txt" para escrita
+arquivo.write('\nAdição!') # Escrever texto no arquivo
+arquivo.close() # Fecha o arquivo
+arquivo = open('aula.txt', 'r', encoding='utf8') # Abre o arquivo "aula.txt" para leitura
+print(arquivo.read()) # ler o arquivo
+arquivo.close() # Fecha o arquivo
 #-----------------------------------------------------------------------------------------------
 
 import os
