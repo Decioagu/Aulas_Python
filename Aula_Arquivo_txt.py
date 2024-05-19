@@ -97,3 +97,37 @@ with open(caminho_arquivo, 'r', encoding='utf8') as arquivo: # with (abre e fech
 os.rename(caminho_arquivo, 'arquivo.txt')
 
 #-----------------------------------------------------------------------------------------------
+'''
+Exceções Comuns ao Manipular Arquivos .txt em Python
+Ao trabalhar com arquivos .txt em Python, diversas exceções podem surgir. 
+Compreender e lidar com essas exceções é crucial para garantir a robustez e 
+confiabilidade do seu código.
+
+1. Erro de Permissão:
+    # OSError: [Errno 13] Permission denied: Permissão negada para acessar ou 
+    modificar o arquivo. Verifique se o script possui as permissões necessárias 
+    e se o arquivo não está bloqueado.
+    # FileNotFoundError: [Errno 2] No such file or directory: Arquivo não encontrado. 
+    Certifique-se de que o nome do arquivo e o caminho estejam corretos.
+
+2. Erros de Leitura/Escrita:
+    # IOError: [Errno 28] No space left on device: Sem espaço em disco. 
+    Libere espaço no disco ou utilize um arquivo menor.
+    # EOFError: EOF when reading from empty file: Fim de arquivo inesperado 
+    durante a leitura. Verifique se o arquivo está vazio ou corrompido.
+
+3. Erros de Formato:
+    # ValueError: invalid literal for int(): Tentativa de converter um valor não 
+    numérico para um inteiro. Verifique se os dados do arquivo estão no formato correto.
+    # UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb5 in position 0: 
+    Erro de decodificação de caracteres. Certifique-se de que o arquivo esteja 
+    codificado na codificação correta (por exemplo, UTF-8).
+
+4. Manipulação Inadequada:
+    # TypeError: not a seekable object: Tentativa de buscar em um objeto 
+    não pesquisável. Verifique se o objeto é um arquivo válido.
+    # AttributeError: 'str' object has no attribute 'seek': 
+    Tentativa de usar um método de arquivo em uma string. 
+    Certifique-se de estar acessando o objeto arquivo correto.
+
+'''

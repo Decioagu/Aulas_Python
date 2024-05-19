@@ -623,24 +623,27 @@ class Pessoa: # Classe principal
 
     def falar_nome_classe(self):
         print('classe PESSOA')
-        print(self.nome, self.sobrenome, self.__class__.__name__)
-
+        print(self.nome, self.sobrenome, 'da classe' ,self.__class__.__name__)
 
 class Cliente(Pessoa): # Classe filha
     def falar_nome_classe(self):
         print('classe CLIENTE')
-        print(self.nome, self.sobrenome, self.__class__.__name__)
-
+        print(self.nome, self.sobrenome, 'da classe' ,self.__class__.__name__)
 
 class Aluno(Pessoa): # Classe filha
     cpf = 'cpf aluno'
 
-
+print('='*30)
+p1 = Pessoa ('Décio', 'Santana')
+p1.falar_nome_classe() # esta usando método da "class Cliente"
+print('='*30)
 c1 = Cliente('Luiz', 'Otávio')
 c1.falar_nome_classe() # esta usando método da "class Cliente"
+print('='*30)
 a1 = Aluno('Maria', 'Helena')
 a1.falar_nome_classe() # esta usando método da "class Pessoa"
 print(a1.cpf)
+print('='*30)
 
 print('<==========================================================>')
 
@@ -1610,3 +1613,60 @@ def main():
 main()
 
 #-----------------------------------------------------------------------------------------------
+
+# acesso aos objetos das classes
+class PlanoTelefone:
+    # 2.1 - construtor
+    def __init__(self, nome, saldo):
+      self.nome_plano = nome
+      self.saldo_usuario = saldo
+
+    # 4.3.2 - método da class
+    def verificar_saldo(self):
+        return self.saldo_usuario
+
+    # 4.2.2 - método da class
+    def mensagem_personalizada(self):
+        if 10 >= self.saldo_usuario:
+            return "Seu saldo está baixo. Recarregue e use os serviços do seu plano."
+        elif 50 <= self.saldo_usuario:
+            return "Parabéns! Continue aproveitando seu plano sem preocupações."
+        else:
+            return "Seu saldo está razoável. Aproveite o uso moderado do seu plano."
+
+class UsuarioTelefone:
+    # 3.1 - construtor
+    def __init__(self, nome, plano):
+        self.nome = nome
+        self.plano = plano
+
+    # 4.1 - método da class
+    def verificar_saldo(self):
+        # 4.2.1 - instanciar método objeto da class PlanoTelefone
+        mensagem_saldo = self.plano.mensagem_personalizada()
+
+        # 4.3.1 - instanciar método objeto da class PlanoTelefone
+        saldo_usuario = self.plano.verificar_saldo()
+        
+        # 4.4 - retorno
+        return saldo_usuario, mensagem_saldo
+
+# 1 - dados de entrada
+nome_usuario = 'Décio'
+nome_plano = 'Prata'
+saldo_inicial = 9
+
+# 2 - objeto "plano_usuario" = class(dado de entrada, dado de entrada)
+plano_usuario = PlanoTelefone(nome_plano, saldo_inicial) 
+
+# 3 - objeto "usuario" = class(dado de entrada, objeto_usuario)
+usuario = UsuarioTelefone(nome_usuario, plano_usuario)  
+
+# 4 - instanciar método objeto da class UsuarioTelefone
+saldo_usuario, mensagem_usuario = usuario.verificar_saldo() 
+
+# 5 - resposta do retorno das classes
+print(f'Saldo atual = {saldo_usuario}\n{mensagem_usuario}')
+
+          
+     
