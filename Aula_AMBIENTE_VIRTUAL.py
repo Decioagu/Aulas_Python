@@ -33,6 +33,8 @@ deactivate
 py -V
 python -V
 pip --version
+py -m pip --version
+python -m pip --version
 
 # atualizar pip
 python.exe -m pip install --upgrade pip
