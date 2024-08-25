@@ -243,12 +243,14 @@ print()
 print('========================')
 
 # inserir 'x' cinco vez na lista
+# "compreensão de lista" ou "list comprehension"
 lista = ['x' for numero in range(5)]
 print(lista)
 print()
 print('========================')
 
 # dobra valores da range na lista
+# ("compreensão de lista" ou "list comprehension")
 lista = [numero * 2 for numero in range(1, 11)]
 print(lista)
 print()
@@ -274,6 +276,7 @@ print()
 
 # ---------------------------------------------------------------------
 # (FILTRO) exibir somente valores igual e maior que 2, igual e menor que 5
+# "compreensão de lista" ou "list comprehension"
 lista = [n for n in range(10) if 2<= n <= 5]
 print(lista)
 
@@ -449,7 +452,7 @@ l2 = ['BA', 'SP', 'MG', 'RJ']
 
 def zipper(l1, l2):
     intervalo = min(len(l1), len(l2))
-    res = [(l1[i], l2[i]) for i in range(intervalo)]
+    res = [(l1[i], l2[i]) for i in range(intervalo)] # "compreensão de lista" ou "list comprehension"
     print(res)
     
 zipper(l1, l2)

@@ -254,17 +254,22 @@ Exemplo: "Olá, meu nome é __${nome}__ e tenho __${idade}__ anos."
 - O __subprocess é um módulo__ Python que __permite executar programas externos e comandos de shell e interagir com eles__. Ele fornece funções para criar novos processos, enviar e receber dados de/para os processos, e esperar por sua execução.
 ---
 
-**Aula_Variaveis_de_Ambiente.py**
-- Um __arquivo .env__ é um arquivo de texto que contém __variáveis de ambiente__. Ele é usado para __armazenar informações__ que podem ser __usadas por diferentes programas ou scripts__ em execução no sistema operacional, como caminhos de arquivos, configurações de rede ou informações de autenticação.
-Arquivos .env são frequentemente usados em projetos Python para armazenar configurações específicas do projeto. Isso permite que as configurações sejam facilmente alteradas sem modificar o código-fonte do projeto.
+**Aula_.env**
+- Um arquivo __.env__ é um arquivo de texto que contém __variáveis de ambiente__. Ele é usado para armazenar informações sensíveis como chaves de API, credenciais de banco de dados, configurações de ambiente, caminhos de arquivos, configurações de rede ou informações de autenticação. Isso permite que as configurações sejam facilmente alteradas sem modificar o código-fonte do projeto.
 ---
 
-**Aula_threads.py**
-- O uso de __threads__ é uma forma de criar objetos que podem ser executados em paralelo. Isso pode ser útil para melhorar o desempenho de um programa, pois __permite que ele execute múltiplas tarefas ao mesmo tempo__.
----
 
 ### Aula_OS
 **Aula_OS.py**
 - O __módulo os__ em Python fornece uma interface para interagir com o sistema operacional. Ele fornece funções e variáveis para manipular arquivos, diretórios, processos, e outros recursos do sistema operacional.
 ---
 
+### Aula_async_e_await
+- Python: __"async"__ e __"await"__
+
+    -   Em Python, __"async"__ e __"await"__ são palavras-chave que trabalham juntas para habilitar a programação assíncrona. Isso significa que seu programa pode lidar com várias tarefas simultaneamente sem bloquear o __thread__ principal. Isso é particularmente útil para operações vinculadas a solicitações de rede ou acesso ao sistema de arquivos, onde você pode passar muito tempo aguardando.
+---
+
+**Aula_threads.py**
+- O uso de __threads__ é uma forma de criar objetos que podem ser executados em paralelo. Isso pode ser útil para melhorar o desempenho de um programa, pois __permite que ele execute múltiplas tarefas ao mesmo tempo__.
+---

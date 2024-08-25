@@ -52,6 +52,10 @@ import os
 current_dir = os.path.abspath('.')
 print(current_dir) # resposta = P:\REPOSITORIO\PUBLICO\PYTHON_UDEMY
 
+# local
+basedir = os.path.abspath(os.path.dirname(__file__))
+print(basedir) # resposta = P:\REPOSITORIO\PUBLICO\PYTHON_UDEMY
+
 # arquivo
 file_path = os.path.abspath('data.json')
 print(file_path) # resposta = P:\REPOSITORIO\PUBLICO\PYTHON_UDEMY\data.json

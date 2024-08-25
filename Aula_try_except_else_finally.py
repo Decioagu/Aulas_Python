@@ -10,11 +10,11 @@ else:
 finally:
   # [Bloco de código que é sempre executado, independentemente de um erro ser gerado]
 '''
-
+import traceback
 try:
     print(x)
-except Exception as erro:
-    print(erro.__class__, erro) # ver class do erro
+except Exception:
+    traceback.print_exc() # ver class do erro
 #-----------------------------------------------------------------------------------------------
 
 try:

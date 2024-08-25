@@ -125,16 +125,27 @@ print("Microsegundo:", t.microsecond) # O parâmetro microssegundo deve ser maio
 #-----------------------------------------------------------------------------------------------
 
 # data atual (DINÂMICO) 
-'''
-UTC (Tempo Universal Coordenado). 
-Padrão de hora internacional que é usado como referência para todos os outros fusos horários:
-datetime.utcnow()
-'''
 from datetime import datetime
 
 print("today:", datetime.today()) # data atual  (fuso horário local do computador)
 print("now:", datetime.now()) # data atual (fuso horário local do computador)
-print("utcnow:", datetime.utcnow()) # data atual (fuso padrão internacional)
+
+#-----------------------------------------------------------------------------------------------
+'''
+UTC (Tempo Universal Coordenado). 
+Padrão de hora internacional que é usado como referência para todos os outros fusos horários.
+É uma escala de tempo coordenado, mantida pela Agência Internacional de Pesos e Medidas e utilizada 
+como padrão de "hora certa" no controle de tráfego aéreo e serviços de meteorologia aeronáutica.
+O sistema UTC foi desenvolvido pela ITU/UIT em 1970.
+https://24timezones.com/fuso-horario/utc
+'''
+# data atual (DINÂMICO) 
+
+from datetime import datetime, timezone
+
+print("utcnow:", datetime.utcnow()) # data atual (fuso padrão internacional) => "forma desatualizado"
+print("utcnow:", datetime.now(timezone)) # data atual (fuso padrão internacional) => "forma atualizado"
+
 #-----------------------------------------------------------------------------------------------
 
 # manipula apresentação da data ao imprimir - formatar data - (DINÂMICO) ou (FIXO)

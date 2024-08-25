@@ -63,6 +63,13 @@ Abaixo, listo alguns dos métodos mais comuns e suas funcionalidades:
 # splitlines(): Divide a string em uma lista de linhas, com base nas quebras de linha.
 '''
 
+# FORMATAÇÃO DE TEXTO
+nome = 'Décio'
+idade = 43
+print("Meu nome é {} e tenho {} anos".format(nome, idade))
+print("Meu nome é {n} e tenho {i} anos".format(i=idade, n=nome))
+print(f"Meu nome é {nome} e tenho {idade} anos")
+
 # FIM DA TABELA DE CORES
 print()
 print('= FATIAMENTO DE FRASE =')
