@@ -67,6 +67,12 @@ lista[0] = 0
 print(lista)
 lista[4] = 0
 print(lista)
+# --------------------------------------------------------------
+
+# Atualizar elementos na lista em uma lista
+lista = ['X', 'a', 'Z']
+lista[1] = 'Y' # <====== indicação da posição do elemento por índice
+print(lista)
 
 # --------------------------------------------------------------
 # adicionar elementos na lista
@@ -617,12 +623,42 @@ produtos = [
 
 # filter(função, iterável)
 novos_produtos = filter(
-    lambda produto: produto['preco'] > 100,
-    produtos
+    lambda produto: produto['preco'] > 100, # <==== chave
+    produtos # <==== lista
 )
 
 print_iter(produtos)
 print_iter(novos_produtos)
+
+print('==============================================')
+
+# # dados iniciais
+cursos = [
+    {
+        "id" : 1,
+        "titulo": "Programação para Leigos",
+        "aulas": 112,
+        "horas": 58
+    },
+    {
+        "id" : 2,
+        "titulo": "Algoritmos e logica de programação",
+        "aulas": 87,
+        "horas": 67
+    },
+    {   
+        "id" : 3,
+        "titulo": "Programação linguagem Python",
+        "aulas": 33,
+        "horas": 47
+    }
+]
+
+busca_id = 2
+# filtro
+filtrar_id = filter(lambda meu_id: meu_id['id'] == busca_id, cursos)
+curso = dict(*filtrar_id)
+print(curso)
 
 # --------------------------------------------------------
 
