@@ -11,5 +11,5 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
     - os.path.join(..., '..') sobe um nível na estrutura de diretórios (para o diretório pai).
     - os.path.dirname(__file__) retorna o diretório do arquivo atual.
 '''
-from config.conf import fala
-fala()
+from modulo.meu_modulo import impotar_modulo
+impotar_modulo()
