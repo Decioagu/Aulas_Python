@@ -273,3 +273,10 @@ Exemplo: "Olá, meu nome é __${nome}__ e tenho __${idade}__ anos."
 **Aula_threads.py**
 - O uso de __threads__ é uma forma de criar objetos que podem ser executados em paralelo. Isso pode ser útil para melhorar o desempenho de um programa, pois __permite que ele execute múltiplas tarefas ao mesmo tempo__.
 ---
+
+**Aula_sys**
+- Caminho absoluto para o diretório pai do arquivo atual:
+    - sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+- O objetivo desse trecho de código é adicionar o diretório pai do arquivo atual ao sys.path, para que o Python possa __encontrar e importar módulos__ que estão no mesmo diretório. Isso é __útil quando se deseja manter a estrutura do projeto organizada__, permitindo que módulos em diferentes diretórios sejam acessíveis uns aos outros.
+---
