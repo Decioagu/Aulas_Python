@@ -280,3 +280,13 @@ Exemplo: "Olá, meu nome é __${nome}__ e tenho __${idade}__ anos."
 
 - O objetivo desse trecho de código é adicionar o diretório pai do arquivo atual ao sys.path, para que o Python possa __encontrar e importar módulos__ que estão no mesmo diretório. Isso é __útil quando se deseja manter a estrutura do projeto organizada__, permitindo que módulos em diferentes diretórios sejam acessíveis uns aos outros.
 ---
+
+**Aula_tqdm.py**
+
+- A biblioteca "__tqdm__" é usada em Python para criar barras de progresso de maneira simples e prática. É muito útil em situações onde você precisa acompanhar o andamento de tarefas demoradas, como loops, downloads, ou processamento de dados.
+---
+
+**Aula_Queue**
+
+- O __Queue__ é uma classe do módulo __queue__ em Python, usada para implementar estruturas de fila. Filas são coleções ordenadas o primeiro elemento inserido é o primeiro a ser removido. Essa classe é requentemente utilizada em cenários de __multithreading__ para gerenciar dados compartilhados entre __threads__ de forma segura e eficiente.
+---
