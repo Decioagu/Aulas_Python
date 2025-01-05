@@ -30,6 +30,9 @@ As strings em Python são __unicode__, o que significa que elas podem representa
 - Para adicionar __cores__ em texto em Python, você pode usar as sequências de escape ANSI. Essas sequências são usadas para controlar as cores do texto exibido no terminal.
 ---
 
+**Aula_colorama.py**
+- O __módulo Colorama__ em Python é amplamente utilizado para formatar o texto exibido no terminal com cores, estilos e outras personalizações.
+
 **Aula_LISTA.py**
 - Em Python, uma __list()__ é uma estrutura de dados que permite armazenar uma coleção de itens em uma única variável. Os itens da lista podem ser de qualquer tipo, incluindo números, strings, objetos ou até mesmo outras listas.
 ---

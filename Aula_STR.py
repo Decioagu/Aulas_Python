@@ -251,10 +251,22 @@ print(x is p)
 a = 1 - 2
 print(abs(a))
 
+'''
+Os parâmetros sep= e end= em Python são usados com a função print() 
+para personalizar a formatação da saída no console.
+
+sep= (Separador)
+Define o separador entre os elementos na string, onde por padrão seria espaço vazio.
+
+end= (Finalizador)
+Define o caractere que será adicionado ao final da saída da função print(), 
+onde por padra é "\n" quebra de linha.
+
+'''
 print("My", "name", "is", "Monty", "Python.", sep="-")
 print("My name is", end=" ")
 print("Monty Python.")
-print("My name is", end="-")
+print("My name is", end="###")
 print("Monty Python.")
 print("My", "name", "is", sep="_", end="*")
 print("Monty Python.")
