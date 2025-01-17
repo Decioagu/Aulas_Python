@@ -124,6 +124,8 @@ Exemplo: __"variável" = list(map(função, iterável))__
 
 **Aula_GENERATOR_EXPRESSION.py**
 - Generator expression em Python é uma expressão que retorna um objeto gerador. É semelhante a uma __compreensão de lista__, mas em vez de criar uma lista, cria um __objeto gerador__ que pode ser iterado para produzir os valores no gerador.
+- "yield" é uma palavra-chave que é usada para criar geradores
+- next("GERADOR") em Python é usado para obter o próximo valor de um gerador
 ---
 
 **Aula_ITERADOR.py**
@@ -278,8 +280,11 @@ Exemplo: "Olá, meu nome é __${nome}__ e tenho __${idade}__ anos."
 ---
 
 **Aula_sys**
-- Caminho absoluto para o diretório pai do arquivo atual:
-    - sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+- __exec.py__:
+    - Caminho absoluto para o diretório pai do arquivo atual:
+        - sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+- __sys.getsizeof()__: é usado em Python para obter o tamanho em bytes de um objeto na memória.
 
 - O objetivo desse trecho de código é adicionar o diretório pai do arquivo atual ao sys.path, para que o Python possa __encontrar e importar módulos__ que estão no mesmo diretório. Isso é __útil quando se deseja manter a estrutura do projeto organizada__, permitindo que módulos em diferentes diretórios sejam acessíveis uns aos outros.
 ---
