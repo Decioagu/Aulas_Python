@@ -35,6 +35,8 @@ As strings em Python são __unicode__, o que significa que elas podem representa
 
 **Aula_LISTA.py**
 - Em Python, uma __list()__ é uma estrutura de dados que permite armazenar uma coleção de itens em uma única variável. Os itens da lista podem ser de qualquer tipo, incluindo números, strings, objetos ou até mesmo outras listas.
+- Laço o __"for"__: iterar sequência de dados (listas, tuplas, strings)
+- __range()__: é uma função em Python é usada para criar uma sequência de números
 ---
 
 **Aula_TUPLA.py**
@@ -92,6 +94,16 @@ match dia:
         print("Sextou...")
     case _:
         print("Zzzz...")
+---
+
+**Aula_Loopy.py**
+- Laços (ou loops) em Python são estruturas de controle usadas para repetir um bloco de código várias vezes, com base em uma condição ou em uma sequência. Eles são amplamente utilizados para iterar sobre elementos de coleções (como listas, tuplas, dicionários, etc). Os laços podem ser __"for"__ ou __"while"__.
+
+    Quando usar: 
+    - Use __"for"__ quando souber o número de iterações ou estiver trabalhando com coleções.
+    - Use __"while"__ quando depender de uma condição dinâmica que pode mudar durante a execução.
+
+- A função __range()__ em Python é usada para gerar uma sequência de números, que pode ser iterada em estruturas como loops for.
 ---
 
 **Aula_BREAK_&_CONTINUE.py**

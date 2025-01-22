@@ -24,6 +24,11 @@ listaA = list()
 print(listaA)
 listaB = []
 print(listaB)
+
+'''
+    range() é uma função em Python é usada para criar uma sequência de números
+    range(inicio, fim, passo)
+'''
 listaC = list(range(0,11,2))
 print(listaC)
 print()
