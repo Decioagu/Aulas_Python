@@ -103,7 +103,7 @@ match dia:
     - Use __"for"__ quando souber o número de iterações ou estiver trabalhando com coleções.
     - Use __"while"__ quando depender de uma condição dinâmica que pode mudar durante a execução.
 
-- A função __range()__ em Python é usada para gerar uma sequência de números, que pode ser iterada em estruturas como loops for.
+- A função __range()__ em Python é usada para gerar uma sequência de números, que pode ser iterada em estruturas como loops __for__.
 ---
 
 **Aula_BREAK_&_CONTINUE.py**
