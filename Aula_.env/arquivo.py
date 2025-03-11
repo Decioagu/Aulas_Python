@@ -6,6 +6,10 @@ Um arquivo .env (abreviação de "environment") é usado para armazenar variáve
 de ambiente de forma segura e organizada, especialmente em projetos de software.
 
 pip install python-dotenv
+
+.env
+    login = DECIOSAN
+    senha = 123456
 '''
 
 load_dotenv()

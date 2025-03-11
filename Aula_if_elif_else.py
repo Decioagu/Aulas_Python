@@ -18,6 +18,25 @@ if int(x) == 1:
 else:
     print("Opção 6")
 
+# ----------------------------------------------------------------------------
+
+x = 0
+
+if 1 <= x <=5:
+    print('Verdade')
+else:
+    print('Falso')
+
+if 1 <= x and x <=5:
+    print('Verdade')
+else:
+    print('Falso')
+
+if 1 <= x or x <=5:
+    print('Verdade')
+else:
+    print('Falso')
+
 
 # ----------------------------------------------------------------------------
 '''

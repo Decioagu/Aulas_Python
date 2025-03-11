@@ -292,13 +292,36 @@ Exemplo: "Olá, meu nome é __${nome}__ e tenho __${idade}__ anos."
 ---
 
 **Aula_sys**
-- __exec.py__:
-    - Caminho absoluto para o diretório pai do arquivo atual:
-        - sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+- O comando __sys.path.append(os.path.abspath(...))__ é usado em Python para adicionar dinamicamente um diretório ao caminho de importação do interpretador. Isso permite importar módulos de um local específico que não está no sys.path por padrão.
 
-- __sys.getsizeof()__: é usado em Python para obter o tamanho em bytes de um objeto na memória.
+    - __os.path.abspath(...)__: Retorna o caminho absoluto de um diretório, garantindo que seja corretamente reconhecido pelo sistema operacional.
+    - __sys.path.append(...)__: Adiciona esse caminho ao sys.path, permitindo que módulos dentro desse diretório sejam importados.
 
-- O objetivo desse trecho de código é adicionar o diretório pai do arquivo atual ao sys.path, para que o Python possa __encontrar e importar módulos__ que estão no mesmo diretório. Isso é __útil quando se deseja manter a estrutura do projeto organizada__, permitindo que módulos em diferentes diretórios sejam acessíveis uns aos outros.
+É útil quando se deseja manter a estrutura do projeto organizada:
+    - os.path.dirname(__file__) retorna o diretório do arquivo atual.
+    - os.path.join(..., '..') sobe um nível na estrutura de diretórios (para o diretório pai).
+    - sys.path.append(...) - Adiciona um novo caminho ao sys.path.
+    - os.path.abspath(...) converte esse caminho em um caminho absoluto.
+
+- # Modelo 1:
+- import sys
+- import os
+- Explique seu uso(os.path.dirname(__file__)))
+- # Adiciona ao sys.path o próprio diretório onde o script está sendo executado (__file__).
+
+- # Modelo 2:
+- import sys
+- import os
+- sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+- # Adiciona o diretório pai (diretório acima do diretório onde o script está) ao sys.path.
+
+    projeto/
+    ├── principal.py
+    ├── modulo_auxiliar.py
+    └── subdiretorio/
+        └── outro_modulo.py
+    - Se (principal.py) usar o Modelo 1, ele poderá importar (modulo_auxiliar.py) diretamente.
+    - Se (principal.py) usar o Modelo 2, ele poderá importar (outro_modulo.py) de subdiretorio/.
 ---
 
 **Aula_tqdm.py**
