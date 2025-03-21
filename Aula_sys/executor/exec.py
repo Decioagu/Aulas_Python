@@ -4,35 +4,43 @@ import os
 
 # Adicionar o caminho do diretório pai ao sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from modulo.meu_modulo import impotar_modulo
 impotar_modulo()
 
 
 '''
-É útil quando se deseja manter a estrutura do projeto organizada:
-    - os.path.dirname(__file__) retorna o diretório do arquivo atual.
-    - os.path.join(..., '..') sobe um nível na estrutura de diretórios (para o diretório pai).
-    - sys.path.append(...) - Adiciona um novo caminho ao sys.path.
-    - os.path.abspath(...) converte esse caminho em um caminho absoluto.
-
-- # Modelo 1:
+# Modelo 1:
 - import sys
 - import os
 - sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-- # Adiciona ao sys.path o próprio diretório onde o script está sendo executado (__file__).
+- from modulo_auxiliar import MINHA_FUNÇÃO
+# sys.path.append(): permitindo que módulos localizados diretório (pasta).
+# os.path.abspath(): Converte o caminho relativo para um caminho absoluto.
+# os.path.join(, '..'): Mover para nível 
+# os.path.dirname(__file__): Informa diretório atual
 
-- # Modelo 2:
+
+# Modelo 2:
 - import sys
 - import os
 - sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-- # Adiciona o diretório pai (diretório acima do diretório onde o script está) ao sys.path.
+- from outro_modulo import MINHA_FUNÇÃO
+# sys.path.append(): permitindo que módulos localizados diretório (pasta).
+# os.path.abspath(): Converte o caminho relativo para um caminho absoluto.
+# os.path.join(, '..'): Mover para nível 
+# os.path.dirname(__file__): Informa diretório atual
+# , '..': Aponta para pasta fora do diretório atual
 
 projeto/
-├── principal.py
-├── modulo_auxiliar.py
-└── subdiretorio/
-    └── outro_modulo.py
-Se (principal.py) usar o Modelo 1, ele poderá importar (modulo_auxiliar.py) diretamente.
+├── subdiretorio 1/
+├   └── principal.py
+├   └── modulo_auxiliar.py
+├── subdiretorio 2/
+├   └── outro_modulo.py
+
+Se (principal.py) usar o Modelo 1, ele poderá importar (modulo_auxiliar.py) diretamente:
+from modulo_auxiliar import MINHA_FUNÇÃO
+
 Se (principal.py) usar o Modelo 2, ele poderá importar (outro_modulo.py) de subdiretorio/.
+from outro_modulo import MINHA_FUNÇÃO
 '''
