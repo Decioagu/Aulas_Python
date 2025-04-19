@@ -12,10 +12,10 @@ pip install python-dotenv
     senha = 123456
 '''
 
-load_dotenv()
+load_dotenv() # Carrega as variáveis do .env
 
-login = os.getenv('LOGIN')
-senha = os.getenv('SENHA')
+login = os.getenv('LOGIN') # Acessar variáveis de ambiente
+senha = os.getenv('SENHA') # Acessar variáveis de ambiente
 
 print(login)
 print(senha)
