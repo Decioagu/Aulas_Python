@@ -16,9 +16,7 @@ impotar_modulo()
 - from modulo_auxiliar import MINHA_FUNÇÃO
 # sys.path.append(): permitindo que módulos localizados diretório (pasta).
 # os.path.abspath(): Converte o caminho relativo para um caminho absoluto.
-# os.path.join(, '..'): Mover para nível 
 # os.path.dirname(__file__): Informa diretório atual
-
 
 # Modelo 2:
 - import sys
@@ -27,9 +25,9 @@ impotar_modulo()
 - from outro_modulo import MINHA_FUNÇÃO
 # sys.path.append(): permitindo que módulos localizados diretório (pasta).
 # os.path.abspath(): Converte o caminho relativo para um caminho absoluto.
-# os.path.join(, '..'): Mover para nível 
+# os.path.join(): Mover para nível 
 # os.path.dirname(__file__): Informa diretório atual
-# , '..': Aponta para pasta fora do diretório atual
+# , '..': Aponta para pasta fora do diretório atual "os.path.join(os.path.dirname(__file__), '..')"
 
 projeto/
 ├── subdiretorio 1/
