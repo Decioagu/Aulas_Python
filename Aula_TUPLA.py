@@ -62,16 +62,23 @@ except ValueError:
 
 print('<==========================================================>')
 
-z = ('A','B','C', 'D', 'D')
-print(f'TUPLA = {z}')
-# print(f'Letra A  {z.index('A') + 1}º') # erro
-print('Letra C ' + str(z.index('C') + 1) +'º')
-print('Letra D ' + str(z.index('D') + 1) +'º')
-# print('Letra Z ' + str(z.index('Z') + 1) +'º') # ERRO
+nomes = ["Ana", "Carlos", "Maria", "Décio", "Ana","Carlos", "Luana", "João", "Rafael", "Eros", "José"]
+posicao = nomes.index("Carlos",1, 4)
+print(posicao) # ValueError: 'João' is not in list
+
+print(f'TUPLA = {nomes}')
+print(f'O número Décio aparece  {nomes.index("Décio") + 1}º na TUPLA')
+print(f'O número Carlos aparece  {nomes.index("Carlos") + 1}º na TUPLA')
+print(f'O número Ana aparece  {nomes.index("Ana") + 1}º na TUPLA')
+print(f'O número Ana aparece  {nomes.index("Ana", 1) + 1}º na TUPLA')
+print(f'O número Ana aparece  {nomes.index("Ana", 3) + 1}º na TUPLA')
+print(f'O número Ana aparece  {nomes.index("Ana", 0, 9) + 1}º na TUPLA') # nomes.index(número, inicio, parada)
+print(f'O número Ana aparece  {nomes.index("Ana", 1, 9) + 1}º na TUPLA') # nomes.index(número, inicio, parada)
+# print(f'O número Ana aparece  {nomes.index("Ana", 5, 9) + 1}º na TUPLA') # nomes.index(número, inicio, parada) # gera erro não consta na tupla
 try:
-    print('Letra Z ' + str(z.index('Z') + 1) +'º')
+    print(f'O número Ana aparece  {nomes.index("Ana", 5, 8) + 1}º na TUPLA')
 except ValueError:
-    print('"Z" NÃO esta na tupla')
+    print('"Ana" NÃO esta na tupla')
 #-----------------------------------------------------------------------------------------------
 
 # CONTA A QUANTIDADE DE VEZES QUE ELEMENTO DEFINIDO APARECE NA TUPLA 

@@ -50,11 +50,16 @@ print(len(d))
 # inserir dados em dicionário
 print()
 dados = {}
+print(dados)
 dados['Nome'] = 'Décio'
+print(dados)
 dados['Idade'] = 40
+print(dados)
+dados.update({"altura": "1,84"})
 print(dados)
 print(dados['Nome'])
 print(dados['Idade'])
+print(dados['altura'])
 del dados['Idade'] # deletar "Idade" no dicionario
 print(dados)
 

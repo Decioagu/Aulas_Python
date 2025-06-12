@@ -20,4 +20,25 @@ print('==============================================')
 
 soma = lambda n1, n2: n1 + n2 # função lambda
 print(soma(10,5))
-print()
+
+
+print('==============================================')
+
+lista = [(1, 9), (2, 3), (3, 8)]
+# ordenado = sorted(iterable, key=None, reverse=False)
+ordenado = sorted(lista, key=lambda x: x[1]) # ordena a lista de tuplas pelo segundo elemento
+print(ordenado)
+
+print('==============================================')
+
+palavras = ["carro", "avião", "barco"]
+ordenadas = sorted(palavras, key=lambda x: x[0])
+print(ordenadas)  
+
+'''
+x[0] → primeira letra
+
+x[1] → segunda letra
+
+x[2] → terceira letra
+'''

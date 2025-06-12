@@ -2,9 +2,17 @@
 # Usamos a função open para abrir
 # um arquivo em Python (ele pode ou não existir)
 # Modos:
-# "r" (leitura), "w" (escrita), "x" (para criação)
-# "a" (escreve ao final), "b" (binário)
-# "t" (modo texto), "+" (leitura e escrita)
+# 'w': Escrita apenas. Apaga todo o conteúdo existente.
+# 'a': Escrita no final. Preserva o conteúdo existente.
+# 'r': Leitura somente. Erro se o arquivo não existir.
+# 'w+': Leitura e escrita. Apaga o conteúdo e cria se necessário.
+# 'a+': Leitura e escrita. Escreve sempre no final, mesmo com seek().
+# 'r+': Leitura e escrita. Não apaga o conteúdo, mas não cria o arquivo.
+# 'x': Criação exclusiva. Erro se o arquivo já existir.
+# 'x+': Criação exclusiva com leitura e escrita. Erro se o arquivo já existir.
+# 'b': Modo binário. Pode ser combinado com outros modos (ex: 'rb', 'wb', 'ab, 'xb').
+# 't': Modo texto (padrão). Combinado com outros modos (ex: 'rt', 'wt', 'at', 'xt').
+
 # Context manager "-" with (abre e fecha)
 # Métodos úteis
 # write, read (escrever e ler)
@@ -38,16 +46,8 @@ print(arquivo.read()) # ler o arquivo
 arquivo.close() # Fecha o arquivo
 #-----------------------------------------------------------------------------------------------
 
-import os
-caminho_arquivo = 'aula.txt'
-
-'''
-    caminho_arquivo = "Z:\\REPOSITORIO\PUBLICO\\PYTHON_UDEMY\\teste\\'aula116.txt'"
-    arquivo = open(caminho_arquivo, 'w') # abrir
-    arquivo.close() # fechar
-'''
-# escrever arquivo
-with open(caminho_arquivo, 'w+', encoding='utf8') as arquivo: # with (abre e fecha)
+# escrever arquivo com "with" não é necessario o uso de "arquivo.close()"
+with open('aula.txt', 'w+', encoding='utf8') as arquivo: # with (abre e fecha)
     arquivo.write('linha1\n') # escrever no arquivo
     arquivo.write('linha2\n') # escrever no arquivo
     arquivo.writelines(
@@ -58,8 +58,17 @@ with open(caminho_arquivo, 'w+', encoding='utf8') as arquivo: # with (abre e fec
     
 #-----------------------------------------------------------------------------------------------
 
+
+'''
+    caminho_arquivo = "Z:\\REPOSITORIO\PUBLICO\\PYTHON_UDEMY\\teste\\'aula116.txt'"
+    arquivo = open(caminho_arquivo, 'w') # abrir
+    arquivo.close() # fechar
+'''
+import os
+caminho_arquivo = 'aula.txt' # caminho do arquivo
+
 # escrever no final do arquivo
-with open(caminho_arquivo, 'a', encoding='utf8') as arquivo: # with (abre e fecha)
+with open(caminho_arquivo, 'a+', encoding='utf8') as arquivo: # with (abre e fecha)
     arquivo.writelines(
         ('linha6\n', 'linha7\n', 'linha8\n')
     )
@@ -68,7 +77,9 @@ with open(caminho_arquivo, 'a', encoding='utf8') as arquivo: # with (abre e fech
         Erro na acentuação do arquivo.txt utilizar :
         with open(caminho_arquivo, 'a', encoding='utf8') as arquivo:
     '''
-    arquivo.write('Atenção\n')   
+    arquivo.write('Atenção\n')
+    arquivo.seek(0)
+    print(arquivo.read()) # ler o arquivo   
     
 #-----------------------------------------------------------------------------------------------
 
@@ -97,6 +108,13 @@ with open(caminho_arquivo, 'r', encoding='utf8') as arquivo: # with (abre e fech
 os.rename(caminho_arquivo, 'arquivo.txt')
 
 #-----------------------------------------------------------------------------------------------
+
+# escrita em binário
+with open('dados.bin', 'a+b') as f:
+    f.write(b'\x01\x02\x03')  # escreve no final
+    f.seek(0)                 # volta ao início para ler
+    conteudo = f.read()
+    print(conteudo)
 '''
 Exceções Comuns ao Manipular Arquivos .txt em Python
 Ao trabalhar com arquivos .txt em Python, diversas exceções podem surgir. 

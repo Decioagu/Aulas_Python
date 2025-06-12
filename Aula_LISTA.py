@@ -13,7 +13,7 @@ insert(): Insere um elemento em uma posição específica na lista.
 pop(): Remove um elemento do final da lista.
 remove(): Remove a primeira ocorrência de um elemento na lista.
 reverse(): Inverte a ordem dos elementos na lista.
-sort(): Ordena os elementos na lista.
+sort(): Ordenamento alfabético em uma lista,
 clear(): Remove todos os itens na lista.
 len(): Retorna o número de itens na lista.
 '''
