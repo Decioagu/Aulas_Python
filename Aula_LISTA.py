@@ -140,7 +140,9 @@ lista.sort(reverse=True) # ordem decrescente
 print(lista)
 print('========================')
 print(sorted(lista)) # ordem crescente
+print(lista)
 print(sorted(lista, reverse=True)) # ordem decrescente
+print(lista)
 print('========================')
 
 # ===================================================================
@@ -492,7 +494,7 @@ print(lista3) # (('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG')
 # OU
 
 lista3 = [valor for valor in zip_object]  
-print(lista3) # (('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG'))
+print(lista3) # [('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG')]
 
 print()
 print('========================')
