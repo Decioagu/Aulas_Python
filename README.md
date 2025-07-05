@@ -26,6 +26,11 @@ As strings em Python são __imutáveis__, o que significa que elas não podem se
 As strings em Python são __unicode__, o que significa que elas podem representar caracteres de qualquer idioma.
 ---
 
+**Aula_String.py**
+- __Módulo string__ é uma __função que substitui espaços reservados__ em uma cadeia de caracteres, geralmente é feito usando um dicionário ou outra estrutura de dados que mapeia nomes de espaço reservado para seus valores correspondentes.
+Exemplo: "Olá, meu nome é __${nome}__ e tenho __${idade}__ anos."
+---
+
 **Aula_Cores.py**
 - Para adicionar __cores__ em texto em Python, você pode usar as sequências de escape ANSI. Essas sequências são usadas para controlar as cores do texto exibido no terminal.
 ---
@@ -260,11 +265,6 @@ __Use-as apenas se você entender bem como elas funcionam e se precisar de seus 
 
 **Aula_Path.py**
 - __Path é um módulo__ incluído na biblioteca padrão do Python que fornece ferramentas para __manipular caminhos de arquivos e diretórios__. Ele oferece uma interface abrangente e consistente para trabalhar com caminhos, __independentemente do sistema operacional__ em que o Python está sendo executado.
----
-
-**Aula_String.py**
-- __Módulo string__ é uma __função que substitui espaços reservados__ em uma cadeia de caracteres, geralmente é feito usando um dicionário ou outra estrutura de dados que mapeia nomes de espaço reservado para seus valores correspondentes.
-Exemplo: "Olá, meu nome é __${nome}__ e tenho __${idade}__ anos."
 ---
 
 **Aula_Subprocess.py**
