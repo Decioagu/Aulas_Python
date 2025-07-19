@@ -40,35 +40,41 @@ PASTA_NOVA.mkdir(exist_ok=True) # criar nova pasata
 
 readerPDF = PdfReader(RELATORIO_BACEN) # ler arquivo em PDF
 
+# ================ CONTAR QUNTIDADE DE PAGINAS DO PDF ================ 
 print(len(readerPDF.pages)) # quantidde de paginas
 
+# ======================== LER TEXTO EM PDF ========================== 
 for page in readerPDF.pages:
-    print(page) # ler paginas
+    print(page.extract_text()) # ler paginas
     print('<==================================================>')
 
+# ======================== LER TEXTO EM PDF ========================== 
 page0 = readerPDF.pages[0] # ler pagina [0]
 page1 = readerPDF.pages[1] # ler pagina [1]
-imagem = page0.images # lista de imagens
 print('\n<===================================================================>')
 print(page0.extract_text()) # obtér o texto do documento 
 print('<===================================================================>')
 print(page1.extract_text()) # obtér o texto do documento 
 print('<===================================================================>\n')
 
-# ================ SALVAR IMAGEM DE PDF ================ 
+# ================ EXTRAIR IMAGEM DE "PDF" E SALVAR EM ARQUIVO "PNG" ================ 
+page0 = readerPDF.pages[0] # ler pagina [0]
+
+imagem = page0.images # lista de objetos de imagem extraídos do arquivo PDF.
+
 # ver lista de imagens
 for e, i in enumerate(imagem):
     print(f'Imagem {e} =', i)
 
-# imagens na lista => File(name=X24.png, data: 42.4 kB)
-escolhe_imagem = page0.images[13] 
+# Extrair imagens na lista => File(name=X24.png, data: 42.4 kB)
+escolhe_imagem = page0.images[3] # Imagem ? = File(name=?.png, data: ? kB)
 
-# SALVAR imagem em arquivo
+# SALVAR imagem escolhida em arquivo com extensão PNG
 with open(PASTA_NOVA / escolhe_imagem.name, 'wb') as arquivo: # local pasta
     arquivo.write(escolhe_imagem.data) # escrever (salvar imagem)
 print('===================================================================\n')
 
-# ================ CRIAR PDF ================    
+# ================ COPIAR ARQUIVO PDF E RENOMEAR ================    
 
 # CRIAR replica 
 writerPDF = PdfWriter() # escrever arquivo em PDF
@@ -76,14 +82,17 @@ writerPDF = PdfWriter() # escrever arquivo em PDF
 for enum, i in enumerate(readerPDF.pages):
 
     writerPDF.add_page(readerPDF.pages[enum]) # adiciona uma nova página em PDF
+
+    # criar novo arquivo com nome diferente 
     with open(PASTA_NOVA / f'replica_page.pdf', 'wb') as arquivo:
         writerPDF.write(arquivo) # escrever
-
 print('===================================================================\n')
 
-# ================ CRIAR PDF ================
+# ================ SEPARAR PAGINAS DO PDF POR PAGINA INDIVIDUAL ================
+# page0 = readerPDF.pages[0] # ler pagina [0]
+# page1 = readerPDF.pages[1] # ler pagina [1]
 
-# CRIAR separa paginas (1)
+# # CRIAR separa paginas (1)
 # writerPDF = PdfWriter() # escrever arquivo em PDF
 
 # writerPDF.add_page(page1) # adiciona uma nova página em PDF
@@ -93,9 +102,9 @@ print('===================================================================\n')
 
 # writerPDF.add_page(page0) # adiciona uma nova página em PDF
 # with open(PASTA_NOVA / f'nova_page2.pdf', 'wb') as arquivo:
-#     writerPDF.write(arquivo) #
+#     writerPDF.write(arquivo)
 
-# =================== OU ====================
+# =================================== OU ========================================
 
 # CRIAR separa paginas (2)
 for enum, i in enumerate(readerPDF.pages):
@@ -107,7 +116,7 @@ for enum, i in enumerate(readerPDF.pages):
         writerPDF.write(arquivo) # escrever
 print('===================================================================\n')
 
-# ================= UNIR ARQUIVO ============
+# ================= UNIR ARQUIVO EM PDF EM UM ÚNICO ARQUIVO============
 
 mergerPDF = PdfMerger() # unir arquivo em PDF
 

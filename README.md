@@ -205,12 +205,33 @@ Exemplo: __"variável" = list(map(função, iterável))__
 **Aula_Arquivo_EXCEL.py**
 - O __módulo openpyxl__ é uma biblioteca open-source escrita em Python utilizada para ler, escrever e manipular arquivos do __Microsoft Excel__. Ela oferece uma forma fácil e eficiente de automatizar tarefas relacionadas a planilhas.
 ---
+**Aula_PDF**
 
-**Aula_Arquivo_PDF_1.py**
-- O __módulo PyPDF2__ é uma biblioteca Python que permite manipular __arquivos PDF__ para __leitura e escrita__.
+- __PDF_01.py__:
+    - reportlab: é uma biblioteca para criar e gerar arquivos PDF.
+
+- __PDF_02.py__:
+    - Criando tabela com DPF.
+
+- __PDF_03.py__:
+    - WeasyPrint é uma biblioteca em Python que transforma HTML e CSS em PDFs e arquivos de imagem (PNG)
+
+- __Aula_Arquivo_PDF_1__:
+    - PyPDF2 é uma biblioteca Python que permite manipular arquivos PDF: 
+        - Ler texto
+        - Extrair imagem de PDF
+        - Copiar arquivo em PDF e renomear
+        - Separar em paginas um arquivo PDF
+        - Unir paginas em um arquivo PDF
+
+- __Aula_Arquivo_PDF_2.py__:
+    - fitz: é usado para editar arquivos em PDF em outros formatos:
+        - pagina.get_text(): criar texto em txt
+        - pagina..get_pixmap(): cria uma imagem PNG
+        - outros
 ---
 
-**Aula_Arquivo_PDF_2.py**
+__Aula_Arquivo_PDF_2.py__
 - O __módulo PyMuPDF__ é uma biblioteca Python que permite manipular __arquivos PDF__ para __leitura e escrita__.
 ---
 
